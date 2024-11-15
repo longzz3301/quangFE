@@ -47,6 +47,9 @@ const CustomerForm = () => {
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
+        console.log('Check target:', e.target);  // Log để kiểm tra thông tin input
+        console.log('Current name:', name);      // Log tên trường (name) của input
+        console.log('Current value:', value);
         if (name === 'agreement') {
             setFormData((prevData) => ({
                 ...prevData,
@@ -71,28 +74,33 @@ const CustomerForm = () => {
             return;
         }
         setLoading(true);
+        // console.log('data :' ,data)
+        console.log('data :' ,formData)
+        console.log('selectedPickupTime :' ,selectedPickupTime)
+        console.log('selectedPickupAddress :' ,selectedPickupTime)
         try {
-            const { data } = await axios.post("https://orders-chrismast-ten.vercel.app/api/order/orderForm", {
-                pick_up_time: selectedPickupTime,
-                pick_up_place: selectedPickupAddress,
-                first_name: formData.user.first_name,
-                last_name: formData.user.last_name,
-                email: formData.user.email,
-                phone_number: formData.user.phone,
-                products: {
-                    product_name: "Ganspaket",
-                    product_quantity: selectedPickupQuantity,
-                    discount_code: formData.user.discount,
-                }
-            });
+            // console.log(data)
+            // const { data } = await axios.post("https://orders-chrismast-ten.vercel.app/api/order/orderForm", {
+            //     pick_up_time: selectedPickupTime,
+            //     pick_up_place: selectedPickupAddress,
+            //     first_name: formData.user.first_name,
+            //     last_name: formData.user.last_name,
+            //     email: formData.user.email,
+            //     phone_number: formData.user.phone,
+            //     products: {
+            //         product_name: "Ganspaket",
+            //         product_quantity: selectedPickupQuantity,
+            //         discount_code: formData.user.discount,
+            //     }
+            // });
 
             setBoxAdd(true);
             setListOrder(data);
 
-            setTimeout(() => {
-                setBoxAdd(false);
-                window.location.reload();
-            }, 3000);
+            // setTimeout(() => {
+            //     setBoxAdd(false);
+            //     window.location.reload();
+            // }, 3000);
 
         } catch (error) {
             // Handle error
