@@ -77,22 +77,28 @@ const CustomerForm = () => {
         // console.log('data :' ,data)
         console.log('data :' ,formData)
         console.log('selectedPickupTime :' ,selectedPickupTime)
-        console.log('selectedPickupAddress :' ,selectedPickupTime)
+        console.log('selectedPickupAddress :' ,selectedPickupAddress)
+        console.log('selectedPickupQuantity:' ,selectedPickupQuantity)
+        console.log('typeof selectedPickupTime :' ,typeof selectedPickupTime)
+        console.log('typeof selectedPickupAddress :' ,typeof selectedPickupAddress)
+        console.log(' typeof selectedPickupQuantity :' ,typeof selectedPickupQuantity)
         try {
-            // console.log(data)
-            // const { data } = await axios.post("https://orders-chrismast-ten.vercel.app/api/order/orderForm", {
-            //     pick_up_time: selectedPickupTime,
-            //     pick_up_place: selectedPickupAddress,
-            //     first_name: formData.user.first_name,
-            //     last_name: formData.user.last_name,
-            //     email: formData.user.email,
-            //     phone_number: formData.user.phone,
-            //     products: {
-            //         product_name: "Ganspaket",
-            //         product_quantity: selectedPickupQuantity,
-            //         discount_code: formData.user.discount,
-            //     }
-            // });
+            
+            const { data } = await axios.post("http://localhost:3001/customers/create-customer", {
+              firstName: formData.user.first_name,
+              lastName: formData.user.last_name,
+              email: formData.user.email,
+              phone: formData.user.phone,
+              productQuantity:selectedPickupQuantity,
+              address: selectedPickupAddress,
+              appointmentDate: selectedPickupTime,
+                // products: {
+                //     product_name: "Ganspaket",
+                //     product_quantity: selectedPickupQuantity,
+                //     discount_code: formData.user.discount,
+                // }
+            });
+            console.log(data)
 
             setBoxAdd(true);
             setListOrder(data);
