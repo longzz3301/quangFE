@@ -76,7 +76,7 @@ const TextIntro = () => {
       </p>
 
       <p
-        className="bg-[#ffbb33] text-[#6b2f22] flex text-2xl text-textWarning font-Changa leading-loose
+        className="bg-[#ffbb33] text-[#2d2322] font-extrabold flex text-2xl text-textWarning font-Changa leading-loose
                 mobileSmall:text-base mobileSmall:text-center
                 tablet:text-xl
                 desktop:text-xl
@@ -132,7 +132,7 @@ const TextIntro = () => {
           className="w-full h-full text-3xl"
           type="submit"
         >
-          Jetzt online bestellen nut jet 1 ở text intro body zz{" "}
+          Jetzt online bestellen nut jet {" "}
         </button>
       </div>
     </div>
