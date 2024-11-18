@@ -13,6 +13,17 @@ export const pickUpAddressList = [
     },
 ];
 
+export const selectedMain = [
+    {
+        address: "MAin 1",
+        id: 1
+    },
+    {
+        address: "MAin 2",
+        id: 2
+    },
+]
+
 export const pickUpTime = [
     {
         time: "12:00"

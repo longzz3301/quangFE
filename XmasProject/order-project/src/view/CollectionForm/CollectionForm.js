@@ -27,6 +27,26 @@ const CustomerForm = () => {
         agreement: false,
     });
     const [boxAdd, setBoxAdd] = useState(false)
+    const [selectedRadio, setSelectedRadio] = useState(""); // Lưu trữ radio đã chọn (A, B hoặc C)
+    const [selectedAddress, setSelectedAddress] = useState(""); // Lưu trữ địa chỉ đã chọn
+    const [branches, setBranches] = useState([
+      {
+        name: "Breuninger Haus - Click & Collect",
+        addresses: [
+          "thành phố",
+          "Địa chỉ A2",
+          "Địa chỉ A3",
+        ],
+      },
+      {
+        name: "An Rechnungsadresse",
+        addresses: [
+          "Địa chỉ B1",
+          "Địa chỉ B2",
+          "Địa chỉ B3",
+        ],
+      },
+    ]);
     const [selectedPickupAddress, setSelectedPickupAddress] = useState('');
     const [selectedPickupTime, setSelectedPickupTime] = useState('');
     const [selectedPickupQuantity, setselectedPickupQuantity] = useState('');
@@ -44,6 +64,15 @@ const CustomerForm = () => {
             setDiscount(false);
         }
     };
+    const handleRadioChange = (e) => {
+      setSelectedRadio(e.target.value); // Cập nhật giá trị radio đã chọn
+      setSelectedAddress(""); // Reset địa chỉ khi đổi chi nhánh
+    };
+
+    const handleAddressChange = (e) => {
+      setSelectedAddress(e.target.value); // Cập nhật địa chỉ đã chọn
+    };
+    const selectedBranch = branches.find(branch => branch.name === selectedRadio);
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
@@ -320,7 +349,7 @@ const CustomerForm = () => {
                     tablet:w-1/2"
             >
               {/* <label htmlFor="pickupAddress" className="text-textColor font-Montserrat text-sm">Abholort*</label> */}
-              <select
+              {/* <select
                 id="pickupAddress"
                 name="pickupAddress"
                 value={selectedPickupAddress}
@@ -350,7 +379,56 @@ const CustomerForm = () => {
               className="flex
                     mobileSmall:flex-col mobileSmall:gap-2 w-full
                     tablet:w-1/2"
-            >
+            > */}
+               {/* Radio buttons cho Chi nhánh A, B, C */}
+      <div className="flex flex-col gap-2">
+        <label className="font-semibold text-lg">Chọn chi nhánh:</label>
+        <div className="flex flex-wrap gap-2">
+          {branches.map((branch, index) => (
+            <label key={index} className="flex items-center space-x-2">
+              <input
+                type="radio"
+                name="branch"
+                value={branch.name}
+                checked={selectedRadio === branch.name}
+                onChange={handleRadioChange}
+                className="form-radio text-blue-500"
+              />
+              <span>{branch.name}</span>
+            </label>
+          ))}
+        </div>
+      </div>
+
+      {/* Hiển thị dropdown select cho địa chỉ chỉ khi có chi nhánh được chọn */}
+      {selectedRadio && selectedBranch && (
+        <div className="flex flex-col gap-2 w-full mt-4">
+          <label className="font-semibold text-lg">Chọn địa chỉ:</label>
+          <select
+            id="address"
+            name="address"
+            value={selectedAddress}
+            onChange={handleAddressChange}
+            required
+            className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
+          >
+            <option value="" disabled className="italic text-sm">
+              Chọn địa chỉ của {selectedRadio}*
+            </option>
+            {selectedBranch.addresses.map((address, index) => (
+              <option
+                className="text-sm text-textColor block"
+                key={index}
+                value={address}
+              >
+                {address}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
+              
+              
               <select
                 id="pickupTime"
                 name="pickupTime"

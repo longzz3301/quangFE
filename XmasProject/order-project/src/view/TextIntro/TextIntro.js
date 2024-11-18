@@ -50,29 +50,53 @@ const TextIntro = () => {
           Gänse ab jetzt vorbestellen
         </div>
       </div>
-
       <p
-        className="flex text-2xl text-textColor font-Changa leading-loose
-                mobileSmall:text-base mobileSmall:text-center
-                tablet:text-xl
-                desktop:text-xl
-                desktopLarge:text-xl
-            "
+        className="flex text-2xl  text-[#ffbb33] font-bold font-Changa leading-loose
+          mobileSmall:text-base mobileSmall:text-center
+          tablet:text-xl
+          desktop:text-xl
+          desktopLarge:text-xl"
       >
-        Freuen Sie sich auf den Höhepunkt des Festes: unsere köstliche Gans,
-        meisterhaft zubereitet von unseren erfahrenen Köchen.
+        <strong>BESTELLE </strong> ÜBER GANS-LECKER.EU ODER DIREKT BEI UNSEREN
+        MITARBEITER
       </p>
 
       <p
         className="flex text-2xl text-textColor font-Changa leading-loose
-                mobileSmall:text-lg mobileSmall:text-center
-                tablet:text-xl
-                desktop:text-xl
-                desktopLarge:text-xl
-            "
+          mobileSmall:text-base mobileSmall:text-center
+          tablet:text-xl
+          desktop:text-xl
+          desktopLarge:text-xl"
       >
-        Unsere Weihnachtsgänse sind am 24.12.2023 von 12:00 Uhr bis 15:00 Uhr
-        erhältlich.
+        BIS ZU 2 TAGE VOR ABHOL- ODER LIEFERDATUM.
+      </p>
+
+      <p
+        className="flex text-2xl font-Changa leading-loose
+        mobileSmall:text-lg mobileSmall:text-center
+        tablet:text-xl
+        desktop:text-xl
+        desktopLarge:text-xl"
+      >
+        <span className="text-[#ffbb33] font-bold underline">ABHOLUNG:</span>
+        &nbsp;
+        <span className="text-textColor">AB 12 UHR AN JEDEM</span>&nbsp;
+        <span className="text-[#ffbb33] font-bold">ADVENTSSONNTAG</span>&nbsp;
+        <span className="text-textColor">UND AM</span>&nbsp;
+        <span className="text-[#ffbb33] font-bold">24. DEZEMBER.</span>
+      </p>
+
+      <p
+        className="flex text-2xl font-Changa leading-loose
+        mobileSmall:text-lg mobileSmall:text-center
+        tablet:text-xl
+        desktop:text-xl
+        desktopLarge:text-xl"
+      >
+        <span className="text-[#ffbb33] font-bold underline">LIEFERUNG:</span>
+        &nbsp;
+        <span className="text-white">11-14 UHR AN ALLEN</span>&nbsp;
+        <span className="text-[#ffbb33] font-bold">ADVENTSSONNTAGEN.</span>
       </p>
 
       <p
@@ -132,7 +156,7 @@ const TextIntro = () => {
           className="w-full h-full text-3xl"
           type="submit"
         >
-          Jetzt online bestellen nut jet {" "}
+          Jetzt online bestellen nut jet{" "}
         </button>
       </div>
     </div>
