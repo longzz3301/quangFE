@@ -21,12 +21,12 @@ const TextIntro = () => {
   // text intro
   return (
     <div
-      className="bg-backGround opacity-95 flex flex-col gap-10 px-40 py-8 w-full h-auto items-center
-        mobileSmall:px-4 mobileSmall:gap-2
-        tablet:px-12
-        laptop:px-16 laptop:gap-4
-        desktop:px-32 desktop:gap-4
-        "
+    className="bg-backGround opacity-95 flex flex-col gap-10 px-40 py-8 w-full h-auto items-center
+    mobileSmall:px-4 mobileSmall:gap-2
+    tablet:px-12
+    laptop:px-16 laptop:gap-4
+    desktop:px-32 desktop:gap-4
+  "
     >
       <div className="flex flex-col gap-1 text-center">
         <div
@@ -51,55 +51,52 @@ const TextIntro = () => {
         </div>
       </div>
       <p
-        className="flex text-2xl  text-[#ffbb33] font-bold font-Changa   text-[30px] 
-           mobileSmall:text-[10px]
-          tablet:text-xl
-          desktop:text-xl
-          desktopLarge:text-xl"
-      >
-        BESTELLE ÜBER GANS-LECKER.EU ODER DIREKT BEI UNSEREN
-        MITARBEITER
-      </p>
+    className="font-Changa text-[#ffbb33] font-bold text-[30px] leading-relaxed text-center
+      mobileSmall:text-[16px] mobileSmall:leading-snug
+      tablet:text-[24px] tablet:leading-normal
+      desktop:text-[30px] desktop:leading-relaxed
+      desktopLarge:text-[40px] desktopLarge:leading-loose"
+  >
+    BESTELLE ÜBER GANS-LECKER.EU ODER DIREKT BEI UNSEREN MITARBEITER
+  </p>
 
-      <p
-        className="flex text-2xl text-textColor font-Changa leading-loose text-[30px] 
-           mobileSmall:text-[10px]
-          tablet:text-xl
-          desktop:text-xl
-          desktopLarge:text-xl"
-      >
-        BIS ZU 2 TAGE VOR ABHOL- ODER LIEFERDATUM.
-      </p>
+  <p
+    className="font-Changa text-textColor text-[30px] leading-relaxed text-center
+      mobileSmall:text-[16px] mobileSmall:leading-snug
+      tablet:text-[24px] tablet:leading-normal
+      desktop:text-[30px] desktop:leading-relaxed
+      desktopLarge:text-[40px] desktopLarge:leading-loose"
+  >
+    BIS ZU 2 TAGE VOR ABHOL- ODER LIEFERDATUM.
+  </p>
 
-      <p
-        className="flex text-2xl font-Changa leading-loose
-        text-[30px] 
-        mobileSmall:text-[10px]
-        tablet:text-xl
-        desktop:text-xl
-        desktopLarge:text-xl"
-      >
-        <span className="text-[#ffbb33] font-bold underline">ABHOLUNG:</span>
-        &nbsp;
-        <span className="text-textColor">AB 12 UHR AN JEDEM</span>&nbsp;
-        <span className="text-[#ffbb33] font-bold">ADVENTSSONNTAG</span>&nbsp;
-        <span className="text-textColor">UND AM</span>&nbsp;
-        <span className="text-[#ffbb33] font-bold">24. DEZEMBER.</span>
-      </p>
+  <p
+    className="font-Changa text-[30px] leading-relaxed text-center
+      mobileSmall:text-[16px] mobileSmall:leading-snug
+      tablet:text-[24px] tablet:leading-normal
+      desktop:text-[30px] desktop:leading-relaxed
+      desktopLarge:text-[40px] desktopLarge:leading-loose"
+  >
+    <span className="text-[#ffbb33] font-bold underline">ABHOLUNG:</span>
+    &nbsp;
+    <span className="text-textColor">AB 12 UHR AN JEDEM</span>&nbsp;
+    <span className="text-[#ffbb33] font-bold">ADVENTSSONNTAG</span>&nbsp;
+    <span className="text-textColor">UND AM</span>&nbsp;
+    <span className="text-[#ffbb33] font-bold">24. DEZEMBER.</span>
+  </p>
 
-      <p
-        className="flex text-2xl font-Changa leading-loose
-        text-[30px]  mobileSmall:text-[10px]
-        tablet:text-xl
-        desktop:text-xl
-        desktopLarge:text-xl"
-      >
-        <span className="text-[#ffbb33] font-bold underline">LIEFERUNG:</span>
-        &nbsp;
-        <span className="text-white">11-14 UHR AN ALLEN</span>&nbsp;
-        <span className="text-[#ffbb33] font-bold">ADVENTSSONNTAGEN.</span>
-      </p>
-
+  <p
+    className="font-Changa text-[30px] leading-relaxed text-center
+      mobileSmall:text-[16px] mobileSmall:leading-snug
+      tablet:text-[24px] tablet:leading-normal
+      desktop:text-[30px] desktop:leading-relaxed
+      desktopLarge:text-[40px] desktopLarge:leading-loose"
+  >
+    <span className="text-[#ffbb33] font-bold underline">LIEFERUNG:</span>
+    &nbsp;
+    <span className="text-white">11-14 UHR AN ALLEN</span>&nbsp;
+    <span className="text-[#ffbb33] font-bold">ADVENTSSONNTAGEN.</span>
+  </p>
       <p
         className="bg-[#ffbb33] text-[#2d2322] font-extrabold flex text-2xl text-textWarning font-Changa leading-loose
                 mobileSmall:text-base mobileSmall:text-center
