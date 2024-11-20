@@ -51,8 +51,8 @@ const TextIntro = () => {
         </div>
       </div>
       <p
-        className="flex text-2xl  text-[#ffbb33] font-bold font-Changa leading-loose
-          mobileSmall:text-base mobileSmall:text-[10px]
+        className="flex text-2xl  text-[#ffbb33] font-bold font-Changa   text-[30px] 
+           mobileSmall:text-[10px]
           tablet:text-xl
           desktop:text-xl
           desktopLarge:text-xl"
@@ -62,8 +62,8 @@ const TextIntro = () => {
       </p>
 
       <p
-        className="flex text-2xl text-textColor font-Changa leading-loose
-          mobileSmall:text-base mobileSmall:text-[10px]
+        className="flex text-2xl text-textColor font-Changa leading-loose text-[30px] 
+           mobileSmall:text-[10px]
           tablet:text-xl
           desktop:text-xl
           desktopLarge:text-xl"
@@ -73,7 +73,8 @@ const TextIntro = () => {
 
       <p
         className="flex text-2xl font-Changa leading-loose
-        mobileSmall:text-lg mobileSmall:text-[10px]
+        text-[30px] 
+        mobileSmall:text-[10px]
         tablet:text-xl
         desktop:text-xl
         desktopLarge:text-xl"
@@ -88,7 +89,7 @@ const TextIntro = () => {
 
       <p
         className="flex text-2xl font-Changa leading-loose
-        mobileSmall:text-lg mobileSmall:text-[10px]
+        text-[30px]  mobileSmall:text-[10px]
         tablet:text-xl
         desktop:text-xl
         desktopLarge:text-xl"
