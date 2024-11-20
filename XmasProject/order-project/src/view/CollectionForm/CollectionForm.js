@@ -28,6 +28,9 @@ const CustomerForm = () => {
       city: '',
       street: '',
       discount: '',
+      selectedAddress:'',
+      customAddress:'',
+      selectedRadio:''
     },
     agreement: false,
   });
@@ -71,7 +74,7 @@ const CustomerForm = () => {
   };
 
   const branches = [
-    { name: "Branch 2", addresses: ["Address 2-1", "Address 2-2"] },
+    { name: "Breuninger Haus ", addresses: ["Address 2-1", "Address 2-2"] },
   ];
 
   const handleRadioChange = (value) => {
@@ -125,9 +128,9 @@ const CustomerForm = () => {
     console.log('selectedPickupTime :', selectedPickupTime)
     console.log('selectedPickupAddress :', selectedPickupAddress)
     console.log('selectedPickupQuantity:', selectedPickupQuantity)
-    console.log('typeof selectedPickupTime :', typeof selectedPickupTime)
-    console.log('typeof selectedPickupAddress :', typeof selectedPickupAddress)
-    console.log(' typeof selectedPickupQuantity :', typeof selectedPickupQuantity)
+    console.log('selectedAddress :',selectedAddress)
+    console.log('customAddress :',customAddress)
+
     try {
 
       const { data } = await axios.post("http://localhost:3001/customers/create-customer", {
@@ -362,10 +365,10 @@ const CustomerForm = () => {
         >
           {/* Radio buttons cho Chi nhánh A, B, C */}
           <div className="flex flex-col gap-2">
-            <label className="font-semibold text-lg">Chọn chi nhánh:</label>
+            <label className="text-textColor font-semibold text-lg">Lieferoptionen :</label>
             <div className="flex flex-wrap gap-2">
               {branches.map((branch, index) => (
-                <label key={index} className="flex items-center space-x-2">
+                <label key={index} className=" text-textColor flex items-center space-x-2">
                   <input
                     type="radio"
                     name="branch"
@@ -378,7 +381,7 @@ const CustomerForm = () => {
                 </label>
               ))}
               {/* Radio cho phép nhập text */}
-              <label className="flex items-center space-x-2">
+              <label className="text-textColor flex items-center space-x-2">
                 <input
                   type="radio"
                   name="branch"
@@ -387,7 +390,7 @@ const CustomerForm = () => {
                   onChange={(e) => handleRadioChange(e.target.value)}
                   className="form-radio text-blue-500"
                 />
-                <span>Nhập chi nhánh khác</span>
+                <span >An Rechnungsadresse </span>
               </label>
             </div>
           </div>
@@ -395,7 +398,7 @@ const CustomerForm = () => {
           {/* Hiển thị dropdown nếu chọn một chi nhánh cụ thể */}
           {selectedRadio && selectedRadio !== "other" && selectedBranch && (
             <div className="flex flex-col gap-2 w-full mt-4">
-              <label className="font-semibold text-lg">Chọn địa chỉ:</label>
+              <label className=" text-textColor font-semibold text-lg">Adresse auswählen:</label>
               <select
                 id="address"
                 name="address"
@@ -405,7 +408,7 @@ const CustomerForm = () => {
                 className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
               >
                 <option value="" disabled className="italic text-sm">
-                  Chọn địa chỉ của {selectedRadio}*
+                Wählen Sie Ihre Adresse aus {selectedRadio}*
                 </option>
                 {selectedBranch.addresses.map((address, index) => (
                   <option
@@ -425,7 +428,8 @@ const CustomerForm = () => {
           {/* Hiển thị input nếu chọn "other" */}
           {selectedRadio === "other" && (
             <div className="flex flex-col gap-2 w-full mt-4">
-              <label className="font-semibold text-lg">Nhập địa chỉ:</label>
+              <label className=" text-textColor font-semibold text-lg">
+              Adresse eingeben :</label>
               <input
                 type="text"
                 id="customAddress"
@@ -434,7 +438,7 @@ const CustomerForm = () => {
                 onChange={(e) => setCustomAddress(e.target.value)}
                 required
                 className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
-                placeholder="Nhập địa chỉ chi nhánh của bạn"
+                placeholder="Geben Sie Ihre Adresse ein"
               />
             </div>
           )}
