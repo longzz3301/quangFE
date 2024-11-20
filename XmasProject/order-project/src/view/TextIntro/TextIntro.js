@@ -52,18 +52,18 @@ const TextIntro = () => {
       </div>
       <p
         className="flex text-2xl  text-[#ffbb33] font-bold font-Changa leading-loose
-          mobileSmall:text-base mobileSmall:text-center
+          mobileSmall:text-base mobileSmall:text-[10px]
           tablet:text-xl
           desktop:text-xl
           desktopLarge:text-xl"
       >
-        <strong>BESTELLE </strong> ÜBER GANS-LECKER.EU ODER DIREKT BEI UNSEREN
+        BESTELLE ÜBER GANS-LECKER.EU ODER DIREKT BEI UNSEREN
         MITARBEITER
       </p>
 
       <p
         className="flex text-2xl text-textColor font-Changa leading-loose
-          mobileSmall:text-base mobileSmall:text-center
+          mobileSmall:text-base mobileSmall:text-[10px]
           tablet:text-xl
           desktop:text-xl
           desktopLarge:text-xl"
@@ -73,7 +73,7 @@ const TextIntro = () => {
 
       <p
         className="flex text-2xl font-Changa leading-loose
-        mobileSmall:text-lg mobileSmall:text-center
+        mobileSmall:text-lg mobileSmall:text-[10px]
         tablet:text-xl
         desktop:text-xl
         desktopLarge:text-xl"
@@ -88,7 +88,7 @@ const TextIntro = () => {
 
       <p
         className="flex text-2xl font-Changa leading-loose
-        mobileSmall:text-lg mobileSmall:text-center
+        mobileSmall:text-lg mobileSmall:text-[10px]
         tablet:text-xl
         desktop:text-xl
         desktopLarge:text-xl"
