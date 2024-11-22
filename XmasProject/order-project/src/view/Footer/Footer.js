@@ -130,7 +130,7 @@ const Footer = () => {
                 desktop:justify-start desktop:items-start desktop:text-[11px]
                 desktopLarge:text-[15px]
             ">
-                            Weihnachten 24.12.2023:
+                            Weihnachten 24.12.2024:
 
                         </p>
                         <p className="flex text-footerText font-Lato
@@ -142,7 +142,7 @@ const Footer = () => {
                 desktop:justify-start desktop:items-start desktop:text-[11px] 
                 desktopLarge:text-[15px]
             ">
-                            12:00 Uhr bis 15:00 Uhr
+                            {/* 12:00 Uhr bis 15:00 Uhr */}
 
                         </p>
 
@@ -155,7 +155,7 @@ const Footer = () => {
                 desktop:justify-start desktop:items-start desktop:text-[11px] 
                 desktopLarge:text-[15px]
             ">
-                            1.Weihnachtsfeiertag 25.12.2023:
+                            1.Weihnachtsfeiertag 25.12.2024:
 
                         </p>
 
@@ -180,7 +180,7 @@ const Footer = () => {
                 desktop:justify-start desktop:items-start desktop:text-[11px]
                 desktopLarge:text-[15px]
             ">
-                            Silvester 31.12.2023:
+                            Silvester 31.12.2024:
 
                         </p>
 
@@ -205,7 +205,7 @@ const Footer = () => {
                 desktop:justify-start desktop:items-start desktop:text-[11px]
                 desktopLarge:text-[15px]
             ">
-                            Neujahr 01.01.2023:
+                            Neujahr 01.01.2024:
 
                         </p>
 
@@ -218,7 +218,7 @@ const Footer = () => {
                 desktop:justify-start desktop:items-start desktop:text-[11px]
                 desktopLarge:text-[15px]
             ">
-                            geschlossen
+                            17:00 Uhr bis 23:00 Uhr
 
                         </p>
                     </div>
@@ -329,7 +329,7 @@ const Footer = () => {
                 desktop:justify-start desktop:items-start desktop:text-[11px]
                 desktopLarge:text-[15px]
             ">
-                            Weihnachten 24.12.2023:
+                            Weihnachten 24.12.2024:
 
                         </p>
                         <p className="flex text-footerText font-Lato
@@ -341,7 +341,7 @@ const Footer = () => {
                 desktop:justify-start desktop:items-start desktop:text-[11px]
                 desktopLarge:text-[15px]
             ">
-                            12:00 Uhr bis 15:00 Uhr
+                            {/* 12:00 Uhr bis 15:00 Uhr */}
 
                         </p>
 
@@ -354,7 +354,7 @@ const Footer = () => {
                 desktop:justify-start desktop:items-start desktop:text-[11px]
                 desktopLarge:text-[15px]
             ">
-                            1.Weihnachtsfeiertag 25.12.2023:
+                            1.Weihnachtsfeiertag 25.12.2024:
 
                         </p>
 
@@ -379,7 +379,7 @@ const Footer = () => {
                 desktop:justify-start desktop:items-start desktop:text-[11px]
                 desktopLarge:text-[15px]
             ">
-                            Silvester 31.12.2023:
+                            Silvester 31.12.2024:
 
                         </p>
 
@@ -404,7 +404,7 @@ const Footer = () => {
                 desktop:justify-start desktop:items-start desktop:text-[11px]
                 desktopLarge:text-[15px]
             ">
-                            Neujahr 01.01.2023:
+                            Neujahr 01.01.2024:
 
                         </p>
 
@@ -417,7 +417,7 @@ const Footer = () => {
                 desktop:justify-start desktop:items-start desktop:text-[11px]
                 desktopLarge:text-[15px]
             ">
-                            Geschlossen
+                              17:00 Uhr bis 23:00 Uhr
 
                         </p>
                     </div>
@@ -528,7 +528,7 @@ const Footer = () => {
                 desktop:justify-start desktop:items-start desktop:text-[11px]
                 desktopLarge:text-[15px]
             ">
-                            Weihnachten 24.12.2023:
+                            Weihnachten 24.12.2024: &
 
                         </p>
                         <p className="flex text-footerText font-Lato
@@ -540,7 +540,7 @@ const Footer = () => {
                 desktop:justify-start desktop:items-start desktop:text-[11px]
                 desktopLarge:text-[15px]
             ">
-                            12:00 Uhr bis 15:00 Uhr
+                            {/* 12:00 Uhr bis 15:00 Uhr */}
 
                         </p>
 
@@ -553,7 +553,7 @@ const Footer = () => {
                 desktop:justify-start desktop:items-start desktop:text-[11px]
                 desktopLarge:text-[15px]
             ">
-                            1.Weihnachtsfeiertag 25.12.2023:
+                            1.Weihnachtsfeiertag 25.12.2024:
 
                         </p>
 
@@ -578,7 +578,7 @@ const Footer = () => {
                 desktop:justify-start desktop:items-start desktop:text-[11px]
                 desktopLarge:text-[15px]
             ">
-                            Silvester 31.12.2023:
+                            Silvester 31.12.2024:
 
                         </p>
 
@@ -603,7 +603,7 @@ const Footer = () => {
                 desktop:justify-start desktop:items-start desktop:text-[11px]
                 desktopLarge:text-[15px]
             ">
-                            Neujahr 01.01.2023:
+                            Neujahr 01.01.2024:
 
                         </p>
 
@@ -616,7 +616,8 @@ const Footer = () => {
                 desktop:justify-start desktop:items-start desktop:text-[11px]
                 desktopLarge:text-[15px]
             ">
-                            10:00 Uhr bis 23:00 Uhr Frühstücks-
+                            {/* 10:00 Uhr bis 23:00 Uhr Frühstücks- */}
+                            10:00 Uhr bis 23:00 Uhr
 
                         </p>
 

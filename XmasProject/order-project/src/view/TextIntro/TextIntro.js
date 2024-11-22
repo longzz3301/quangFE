@@ -29,7 +29,7 @@ const TextIntro = () => {
         "
     >
       <div className="flex flex-col gap-1 text-center">
-        <div
+        {/* <div
           className="font-DancingScript text-[#ffbb33] text-[60px] 
             mobileSmall:text-[40px]
             tablet:text-[60px]
@@ -37,7 +37,7 @@ const TextIntro = () => {
             desktopLarge:text-[110px]"
         >
           Gans schön lecker!{" "}
-        </div>
+        </div> */}
 
         <div
           className="font-DancingScript text-textTitle text-[#ffbb33]  text-[50px] 
@@ -47,7 +47,7 @@ const TextIntro = () => {
             desktopLarge:text-[110px]
             "
         >
-          Gänse ab jetzt vorbestellen
+          Gänse ab jetzt vorbestellen !
         </div>
       </div>
       <p
@@ -156,7 +156,7 @@ const TextIntro = () => {
           className="w-full h-full text-3xl"
           type="submit"
         >
-          Jetzt online bestellen nut jet{" "}
+          Jetzt bestellen {" "}
         </button>
       </div>
     </div>

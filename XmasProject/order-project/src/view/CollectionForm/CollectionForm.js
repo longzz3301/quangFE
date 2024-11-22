@@ -28,9 +28,9 @@ const CustomerForm = () => {
       city: '',
       street: '',
       discount: '',
-      selectedAddress:'',
-      customAddress:'',
-      selectedRadio:''
+      selectedAddress: '',
+      customAddress: '',
+      selectedRadio: ''
     },
     agreement: false,
   });
@@ -74,7 +74,7 @@ const CustomerForm = () => {
   };
 
   const branches = [
-    { name: "Breuninger Haus ", addresses: ["Address 2-1", "Address 2-2"] },
+    { name: "Abholung", addresses: ["Address 2-1", "Address 2-2"] },
   ];
 
   const handleRadioChange = (value) => {
@@ -128,8 +128,8 @@ const CustomerForm = () => {
     console.log('selectedPickupTime :', selectedPickupTime)
     console.log('selectedPickupAddress :', selectedPickupAddress)
     console.log('selectedPickupQuantity:', selectedPickupQuantity)
-    console.log('selectedAddress :',selectedAddress)
-    console.log('customAddress :',customAddress)
+    console.log('selectedAddress :', selectedAddress)
+    console.log('customAddress :', customAddress)
 
     try {
 
@@ -194,7 +194,7 @@ const CustomerForm = () => {
                 desktopLarge:text-[15px]
             "
       >
-        Bitte bestellen Sie Ihr Gänsepaket spätestens 2 Tage vor Abholtermin.
+        Bitte bestellen Sie Ihr Gänsepaket spätestens 2 Tage vor Abhol-oder Liefertermin.
         Letze Bestellannahme ist am 22.12.2023
       </div>
       <div
@@ -390,7 +390,7 @@ const CustomerForm = () => {
                   onChange={(e) => handleRadioChange(e.target.value)}
                   className="form-radio text-blue-500"
                 />
-                <span >An Rechnungsadresse </span>
+                <span >Lieferung </span>
               </label>
             </div>
           </div>
@@ -408,7 +408,7 @@ const CustomerForm = () => {
                 className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
               >
                 <option value="" disabled className="italic text-sm">
-                Wählen Sie Ihre Adresse aus {selectedRadio}*
+                  Wählen Sie Ihre Adresse aus Breuninger Haus {selectedRadio}*
                 </option>
                 {selectedBranch.addresses.map((address, index) => (
                   <option
@@ -429,7 +429,7 @@ const CustomerForm = () => {
           {selectedRadio === "other" && (
             <div className="flex flex-col gap-2 w-full mt-4">
               <label className=" text-textColor font-semibold text-lg">
-              Adresse eingeben :</label>
+                Titel  (optional) :</label>
               <input
                 type="text"
                 id="customAddress"
@@ -440,7 +440,98 @@ const CustomerForm = () => {
                 className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
                 placeholder="Geben Sie Ihre Adresse ein"
               />
+              <label className=" text-textColor font-semibold text-lg">
+                Vorname :</label>
+              <input
+                type="text"
+                id="customAddress"
+                name="customAddress"
+                value={customAddress}
+                onChange={(e) => setCustomAddress(e.target.value)}
+                required
+                className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
+              // placeholder="Geben Sie Ihre Adresse ein"
+              />
+              <label className=" text-textColor font-semibold text-lg">
+                Nachname :</label>
+              <input
+                type="text"
+                id="customAddress"
+                name="customAddress"
+                value={customAddress}
+                onChange={(e) => setCustomAddress(e.target.value)}
+                required
+                className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
+              // placeholder="Geben Sie Ihre Adresse ein"
+              />
+              <label className=" text-textColor font-semibold text-lg">
+                StartBe & Hausnr :</label>
+              <div className="flex items-center gap-5" >
+                <input
+                  type="text"
+                  id="customAddress"
+                  name="customAddress"
+                  value={customAddress}
+                  onChange={(e) => setCustomAddress(e.target.value)}
+                  required
+                  className="w-3/5  placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
+                // placeholder="Geben Sie Ihre Adresse ein"
+                />
+                <input
+                  type="text"
+                  id="customAddress"
+                  name="customAddress"
+                  value={customAddress}
+                  onChange={(e) => setCustomAddress(e.target.value)}
+                  required
+                  className="w-2/5 placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
+                // placeholder="Geben Sie Ihre Adresse ein"
+                />
+              </div>
+              <label className=" text-textColor font-semibold text-lg">
+                Adresszusatz (optional) :</label>
+              <input
+                type="text"
+                id="customAddress"
+                name="customAddress"
+                value={customAddress}
+                onChange={(e) => setCustomAddress(e.target.value)}
+                required
+                className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
+              // placeholder="Geben Sie Ihre Adresse ein"
+              />
+
+              <label className=" text-textColor font-semibold text-lg">
+                Plz & Ort :</label>
+              <div className="flex items-center gap-5" >
+                <input
+                  type="text"
+                  id="customAddress"
+                  name="customAddress"
+                  value={customAddress}
+                  onChange={(e) => setCustomAddress(e.target.value)}
+                  required
+                  className="w-2/5  placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
+                // placeholder="Geben Sie Ihre Adresse ein"
+                />
+                <input
+                  type="text"
+                  id="customAddress"
+                  name="customAddress"
+                  value={customAddress}
+                  onChange={(e) => setCustomAddress(e.target.value)}
+                  required
+                  className="w-3/5 placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
+                // placeholder="Geben Sie Ihre Adresse ein"
+                />
+              </div>
+              <label className=" text-textColor font-semibold text-lg">
+              Land </label>
+              <label className=" text-textColor font-semibold text-lg">
+              DEutschaland </label>
             </div>
+
+
           )}
 
 
