@@ -83,7 +83,7 @@ const CustomerForm = () => {
   };
 
   const branches = [
-    { name: "Abholung", addresses: ["Address 2-1", "Address 2-2"] },
+    { name: "Abholung", addresses: ["CôCô Indochine - Augustinerstraße 1, 90403 Nürnberg", "CôCô Sushi and Grill - Obstmarkt 3, 90762 Fürth","CôCô Erlangen - Nürnberger Str. 31, 91052 Erlangen"] },
   ];
 
   const handleRadioChange = (value) => {

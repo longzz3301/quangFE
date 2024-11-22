@@ -1,4 +1,4 @@
-export const pickUpAddressList = [
+export const selectedAddress = [
     {
         address: "CôCô Indochine - Augustinerstraße 1, 90403 Nürnberg",
         id: 1

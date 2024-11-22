@@ -50,247 +50,89 @@ const TextIntro = () => {
           Gänse ab jetzt vorbestellen !
         </div>
       </div>
-      {/* <p
-        className="font-Changa text-[#ffbb33] font-bold text-[20px] leading-relaxed text-center
-      mobileSmall:text-[16px] mobileSmall:leading-snug
-      tablet:text-[24px] tablet:leading-normal
-      desktop:text-[20px] desktop:leading-relaxed
-      desktopLarge:text-[40px] desktopLarge:leading-loose"
-      >
-        Sichern Sie sich jetzt Ihre köstliche Weihnachtsgans und genießen Sie eine sorglose, genussvolle und festliche Zeit mit Ihren Liebsten.
-      </p>
+      
 
-      <p
-        className="font-Changa text-[#ffbb33] font-bold text-[20px] leading-relaxed text-center
-        mobileSmall:text-[16px] mobileSmall:leading-snug
-        tablet:text-[24px] tablet:leading-normal
-        desktop:text-[20px] desktop:leading-relaxed
-        desktopLarge:text-[40px] desktopLarge:leading-loose"
-      >
-       Unsere Weihnachtsgans – ein Festmahl mit Beilagen:
-
-      </p>
-      <p
-       className="font-Changa text-[#ffbb33] font-bold text-[20px] leading-relaxed text-center
-       mobileSmall:text-[16px] mobileSmall:leading-snug
-       tablet:text-[24px] tablet:leading-normal
-       desktop:text-[20px] desktop:leading-relaxed
-       desktopLarge:text-[40px] desktopLarge:leading-loose"
-      >
-      Hausgemachter Rotkohl, verfeinert durch seine perfekte Mischung aus süßen und würzigen Aromen.</p>
-      <p
-        className="font-Changa text-[#ffbb33] font-bold text-[20px] leading-relaxed text-center
-        mobileSmall:text-[16px] mobileSmall:leading-snug
-        tablet:text-[24px] tablet:leading-normal
-        desktop:text-[20px] desktop:leading-relaxed
-        desktopLarge:text-[40px] desktopLarge:leading-loose"
-      >
-      Fluffige Klöße, die ideal zur zarten, saftigen Gans passen.</p>
-
-      <p
-        className="font-Changa text-[#ffbb33] font-bold text-[20px] leading-relaxed text-center
-        mobileSmall:text-[16px] mobileSmall:leading-snug
-        tablet:text-[24px] tablet:leading-normal
-        desktop:text-[20px] desktop:leading-relaxed
-        desktopLarge:text-[40px] desktopLarge:leading-loose"
-      >
-     Bitte beachten Sie:
-</p>
-
-<p
-        className="font-Changa text-[#ffbb33] font-bold text-[20px] leading-relaxed text-center
-        mobileSmall:text-[16px] mobileSmall:leading-snug
-        tablet:text-[24px] tablet:leading-normal
-        desktop:text-[20px] desktop:leading-relaxed
-        desktopLarge:text-[40px] desktopLarge:leading-loose"
-      >
-    Geben Sie Ihre Bestellung mindestens 2 Tage vor Ihrem gewünschten Abhol- oder Liefertermin auf, damit wir Ihnen die beste Qualität und den besten Service garantieren können.
-</p>
-
-<p
-        className="font-Changa text-[#ffbb33] font-bold text-[20px] leading-relaxed text-center
-        mobileSmall:text-[16px] mobileSmall:leading-snug
-        tablet:text-[24px] tablet:leading-normal
-        desktop:text-[20px] desktop:leading-relaxed
-        desktopLarge:text-[40px] desktopLarge:leading-loose"
-      >
-    Abholung:
-
-</p>
-<p
-        className="font-Changa text-[#ffbb33] font-bold text-[20px] leading-relaxed text-center
-        mobileSmall:text-[16px] mobileSmall:leading-snug
-        tablet:text-[24px] tablet:leading-normal
-        desktop:text-[20px] desktop:leading-relaxed
-        desktopLarge:text-[40px] desktopLarge:leading-loose"
-      >
-    Holen Sie Ihre frisch zubereitete Weihnachtsgans ab 12:00 Uhr an jedem Adventssonntag sowie am 24. Dezember bei uns ab.
-
-
-</p>
-
-<p
-        className="font-Changa text-[#ffbb33] font-bold text-[20px] leading-relaxed text-center
-        mobileSmall:text-[16px] mobileSmall:leading-snug
-        tablet:text-[24px] tablet:leading-normal
-        desktop:text-[20px] desktop:leading-relaxed
-        desktopLarge:text-[40px] desktopLarge:leading-loose"
-      >
-  Lieferung:
-
-
-</p>
-
-<p
-        className="font-Changa text-[#ffbb33] font-bold text-[20px] leading-relaxed text-center
-        mobileSmall:text-[16px] mobileSmall:leading-snug
-        tablet:text-[24px] tablet:leading-normal
-        desktop:text-[20px] desktop:leading-relaxed
-        desktopLarge:text-[40px] desktopLarge:leading-loose"
-      >
-  Lassen Sie sich Ihre Gans bequem nach Hause liefern – zwischen 11:00 und 14:00 Uhr an allen Adventssonntagen.
-
-
-
-</p>
-
-<p
-        className="font-Changa text-[#ffbb33] font-bold text-[20px] leading-relaxed text-center
-        mobileSmall:text-[16px] mobileSmall:leading-snug
-        tablet:text-[24px] tablet:leading-normal
-        desktop:text-[20px] desktop:leading-relaxed
-        desktopLarge:text-[40px] desktopLarge:leading-loose"
-      >
-  Wir freuen uns darauf, Ihnen ein unvergessliches kulinarisches Erlebnis zu bieten. 🎄
-Festlicher Genuss – einfach, lecker und stressfrei mit CôCô!
-
-
-
-
-</p> */}
-
-
-
-      {/* <p
-        className="font-Changa text-[30px] leading-relaxed text-center
-      mobileSmall:text-[16px] mobileSmall:leading-snug
-      tablet:text-[24px] tablet:leading-normal
-      desktop:text-[30px] desktop:leading-relaxed
-      desktopLarge:text-[40px] desktopLarge:leading-loose"
-      >
-        <span className="text-[#ffbb33] font-bold underline">ABHOLUNG:</span>
-        &nbsp;
-        <span className="text-textColor">AB 12 UHR AN JEDEM</span>&nbsp;
-        <span className="text-[#ffbb33] font-bold">ADVENTSSONNTAG</span>&nbsp;
-        <span className="text-textColor">UND AM</span>&nbsp;
-        <span className="text-[#ffbb33] font-bold">24. DEZEMBER.</span>
-      </p> */}
-
-      {/* <p
-        className="font-Changa text-[30px] leading-relaxed text-center
-      mobileSmall:text-[16px] mobileSmall:leading-snug
-      tablet:text-[24px] tablet:leading-normal
-      desktop:text-[30px] desktop:leading-relaxed
-      desktopLarge:text-[40px] desktopLarge:leading-loose"
-      >
-        <span className="text-[#ffbb33] font-bold underline">LIEFERUNG:</span>
-        &nbsp;
-        <span className="text-white">11-14 UHR AN ALLEN</span>&nbsp;
-        <span className="text-[#ffbb33] font-bold">ADVENTSSONNTAGEN.</span>
-      </p> */}
-      {/* <p
-        className="bg-[#ffbb33] text-[#2d2322] font-extrabold flex text-2xl text-textWarning font-Changa leading-loose
-                mobileSmall:text-base mobileSmall:text-center
-                tablet:text-xl
-                desktop:text-xl
-                desktopLarge:text-xl
-            "
-      >
-        Damit Sie ein vollständiges Festmahl genießen können, verkaufen wir
-        unsere Gans mit sorgfältig ausgewählten Beilagen: hausgemachtem Rotkohl,
-        der eine perfekte Mischung aus süß und würzig bietet, und Klößen, die
-        eine ideale Begleitung für die zarte Gans sind.
-      </p> */}
-      {/* <p className="flex text-2xl text-textColor font-Changa leading-loose italic
-                mobileSmall:text-base mobileSmall:text-center
-                tablet:text-xl
-                desktop:text-3xl
-                desktopLarge:text-5xl
-            ">
-                hausgemachtem Rotkohl, der eine perfekte Mischung aus süß und würzig bietet, und Klößen, die eine ideale Begleitung für die zarte Gans sind.
-            </p> */}
-      {/* <img src={WarningIcon} className="w-10 h-10
-                tablet:w-12 tablet:h-12
-                desktop:w-20 desktop:h-20
-                desktopLarge:w-32 desktopLarge:h-32
-            "
-            /> */}
-      {/* <p
-        className="flex text-2xl text-textColor font-Changa italic
-                mobileSmall:text-base mobileSmall:text-center
-                tablet:text-xl
-                desktop:text-xl
-                desktopLarge:text-xl
-            "
-      >
-        Bitte beachten Sie, dass die Vorbestellung Ihres Weihnachtsgänseessens
-        erforderlich ist, um sicherzustellen, dass wir Ihnen die beste Qualität
-        und den besten Service bieten können.
-      </p> */}
-      {/* <p
-        className="flex text-2xl text-textColor font-Changa leading-loose
-                mobileSmall:text-base mobileSmall:text-center
-                tablet:text-xl
-                desktop:text-xl
-                desktopLarge:text-xl
-            "
-      >
-        Sichern Sie sich Ihr köstliches Weihnachtsgans und genießen Sie eine
-        sorgenfreie und festliche Zeit mit Ihren Liebsten. Wir freuen uns
-        darauf, Ihnen einen winterlichen Hochgenuss zu bieten.
-      </p> */}
-
-<div className="text-left font-Changa text-textColor  font-bold leading-relaxed 
+      <div
+        className="text-left font-Changa text-textColor  font-bold leading-relaxed 
  mx-auto max-w-[800px] /* Thu hẹp chiều rộng */
   pl-4  /* Thêm padding trái */
   mobileSmall:text-[14px] mobileSmall:leading-snug
   tablet:text-[18px] tablet:leading-normal
   desktop:text-[16px] desktop:leading-relaxed
   desktopLarge:text-[24px] desktopLarge:leading-loose"
->
-  <p>Sichern Sie sich jetzt Ihre köstliche Weihnachtsgans und genießen Sie eine sorglose, genussvolle und festliche Zeit mit Ihren Liebsten.</p>
+      >
+        <p>
+          <strong className=" text-[#ffbb33]">
+            Sichern Sie sich jetzt Ihre köstliche Weihnachtsgans von CoCo
+          </strong>{" "}
+          und genießen Sie eine sorglose, genussvolle und festliche Zeit mit
+          Ihren Liebsten.
+        </p>
 
-  <p>🎁 <strong>Unsere Weihnachtsgans – ein Festmahl mit Beilagen:</strong></p>
+        <p>
+          🎁{" "}
+          <strong className=" text-[#ffbb33]">
+            Unsere Weihnachtsgans – ein Festmahl mit Beilagen:
+          </strong>
+        </p>
 
-  <ul>
-    <li>Hausgemachter Rotkohl, verfeinert durch seine perfekte Mischung aus süßen und würzigen Aromen.</li>
-    <li>Fluffige Klöße, die ideal zur zarten, saftigen Gans passen.</li>
-  </ul>
+        <ul>
+          <li className="ml-8">
+            <span className="text-[#ffbb33]">* Hausgemachter Rotkohl</span>,
+            verfeinert durch seine perfekte Mischung aus süßen und würzigen
+            Aromen.
+          </li>
 
-  <p><strong>Bitte beachten Sie:</strong></p>
-  <p>
-    Geben Sie Ihre Bestellung mindestens 2 Tage vor Ihrem gewünschten Abhol- oder Liefertermin auf, 
-    damit wir Ihnen die beste Qualität und den besten Service garantieren können.
-  </p>
+          <li className="ml-8">
+            {" "}
+            <span className="text-[#ffbb33]">* Fluffige Klöße</span>, die ideal
+            zur zarten, saftigen Gans passen.
+          </li>
+        </ul>
 
-  <p><strong>Abholung:</strong></p>
-  <p>
-    Holen Sie Ihre frisch zubereitete Weihnachtsgans ab 12:00 Uhr an jedem Adventssonntag sowie am 24. Dezember bei uns ab.
-  </p>
+        <p>
+          <strong className=" text-[#ffbb33]">Bitte beachten Sie:</strong>
+        </p>
+        <p>
+          Geben Sie Ihre Bestellung{" "}
+          <span className="text-[#ffbb33] font-bold">
+            mindestens 2 Tage vor Ihrem gewünschten Abhol- oder Liefertermin
+          </span>{" "}
+          auf, damit wir Ihnen die beste Qualität und den besten Service
+          garantieren können.
+        </p>
 
-  <p><strong>Lieferung:</strong></p>
-  <p>
-    Lassen Sie sich Ihre Gans bequem nach Hause liefern – zwischen 11:00 und 14:00 Uhr an allen Adventssonntagen.
-  </p>
+        <p>
+          <strong className=" text-[#ffbb33]">Abholung:</strong>
+        </p>
+        <p>
+          Holen Sie Ihre frisch zubereitete Weihnachtsgans ab{" "}
+          <span class="text-[#ffbb33] font-bold">12:00 Uhr</span> an jedem{" "}
+          <span class="text-[#ffbb33] font-bold"> Adventssonntag</span> sowie am{" "}
+          <br></br> <span class="text-[#ffbb33] font-bold">24. Dezember</span>{" "}
+          bei uns ab.
+        </p>
 
-  <p>
-    Wir freuen uns darauf, Ihnen ein unvergessliches kulinarisches Erlebnis zu bieten. 🎄
-    Festlicher Genuss – einfach, lecker und stressfrei mit CôCô!
-  </p>
-</div>
+        <p>
+          <strong className=" text-[#ffbb33]">Lieferung:</strong>
+        </p>
+        <p>
+          Lassen Sie sich Ihre Gans bequem nach Hause liefern – zwischen{" "}
+          <span class="text-[#ffbb33] font-bold">11:00 </span> und{" "}
+          <span class="text-[#ffbb33] font-bold">14:00 </span> Uhr an allen
+          <span class="text-[#ffbb33] font-bold"> Adventssonntagen</span>.
+        </p>
 
+        <p>
+          Wir freuen uns darauf, Ihnen ein unvergessliches kulinarisches
+          Erlebnis zu bieten.
+          <span class="text-[#ffbb33] font-bold">
+            🎄 Festlicher Genuss – einfach, lecker und stressfrei mit CôCô!
+          </span>
+        </p>
+      </div>
 
-      <div className="w-[900px] flex justify-center font-DancingScript px-3 py-4 bg-[#ffbb33] text-[#2d2322] font-extrabold over:border-4 hover:border-white hover:bg-[#ffbb3a] hover:text-white rounded-2xl mb-6 cursor-pointer desktopLarge:px-5 desktopLarge:py-7 ">
+      <div className="w-[300px] flex justify-center font-DancingScript px-3 py-4 bg-[#ffbb33] text-[#2d2322] font-extrabold over:border-4 hover:border-white hover:bg-[#ffbb3a] hover:text-white rounded-2xl mb-6 cursor-pointer desktopLarge:px-5 desktopLarge:py-7 mt-6">
         <button
           onClick={scrollToSection}
           className="w-full h-full text-3xl"
