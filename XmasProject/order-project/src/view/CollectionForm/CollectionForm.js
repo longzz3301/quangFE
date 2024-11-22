@@ -30,7 +30,16 @@ const CustomerForm = () => {
       discount: '',
       selectedAddress: '',
       customAddress: '',
-      selectedRadio: ''
+      selectedRadio: '',
+      titel: '' ,
+      vornameLieferung:'' ,
+      nachnameLieferung:'' ,
+      startBeLieferung :'',
+      HausnrLieferung:'' ,
+      adresszusatzLieferung:'' ,
+      plzLieferung:'',
+      OrtLieferung:''
+
     },
     agreement: false,
   });
@@ -141,6 +150,9 @@ const CustomerForm = () => {
         productQuantity: selectedPickupQuantity,
         address: selectedPickupAddress,
         appointmentDate: selectedPickupTime,
+
+        // form thêm khi chọn option :
+       
         // products: {
         //     product_name: "Ganspaket",
         //     product_quantity: selectedPickupQuantity,
@@ -432,22 +444,22 @@ const CustomerForm = () => {
                 Titel  (optional) :</label>
               <input
                 type="text"
-                id="customAddress"
-                name="customAddress"
-                value={customAddress}
-                onChange={(e) => setCustomAddress(e.target.value)}
+                id="titel"
+                name="titel"
+                value={formData.user.titel}
+                onChange={handleChange}
                 required
                 className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
-                placeholder="Geben Sie Ihre Adresse ein"
+                placeholder="TitelLieferung"
               />
               <label className=" text-textColor font-semibold text-lg">
                 Vorname :</label>
               <input
                 type="text"
-                id="customAddress"
-                name="customAddress"
-                value={customAddress}
-                onChange={(e) => setCustomAddress(e.target.value)}
+                id="vornameLieferung"
+                name="vornameLieferung"
+                value={formData.user.vornameLieferung}
+                onChange={handleChange}handleChange
                 required
                 className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
               // placeholder="Geben Sie Ihre Adresse ein"
@@ -456,10 +468,10 @@ const CustomerForm = () => {
                 Nachname :</label>
               <input
                 type="text"
-                id="customAddress"
-                name="customAddress"
-                value={customAddress}
-                onChange={(e) => setCustomAddress(e.target.value)}
+                id="nachnameLieferung"
+                name="nachnameLieferung"
+                value={formData.user.nachnameLieferung}
+                onChange={handleChange}
                 required
                 className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
               // placeholder="Geben Sie Ihre Adresse ein"
@@ -469,20 +481,20 @@ const CustomerForm = () => {
               <div className="flex items-center gap-5" >
                 <input
                   type="text"
-                  id="customAddress"
-                  name="customAddress"
-                  value={customAddress}
-                  onChange={(e) => setCustomAddress(e.target.value)}
+                  id="startBeLieferung"
+                  name="startBeLieferung"
+                  value={formData.user.startBeLieferung}
+                  onChange={handleChange}
                   required
                   className="w-3/5  placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
                 // placeholder="Geben Sie Ihre Adresse ein"
                 />
                 <input
                   type="text"
-                  id="customAddress"
-                  name="customAddress"
-                  value={customAddress}
-                  onChange={(e) => setCustomAddress(e.target.value)}
+                  id="HausnrLieferung"
+                  name="HausnrLieferung"
+                  value={formData.user.HausnrLieferung}
+                  onChange={handleChange}
                   required
                   className="w-2/5 placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
                 // placeholder="Geben Sie Ihre Adresse ein"
@@ -492,10 +504,10 @@ const CustomerForm = () => {
                 Adresszusatz (optional) :</label>
               <input
                 type="text"
-                id="customAddress"
-                name="customAddress"
-                value={customAddress}
-                onChange={(e) => setCustomAddress(e.target.value)}
+                id="adresszusatzLieferung"
+                name="adresszusatzLieferung"
+                value={formData.user.adresszusatzLieferung}
+                onChange={handleChange}
                 required
                 className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
               // placeholder="Geben Sie Ihre Adresse ein"
@@ -506,20 +518,20 @@ const CustomerForm = () => {
               <div className="flex items-center gap-5" >
                 <input
                   type="text"
-                  id="customAddress"
-                  name="customAddress"
-                  value={customAddress}
-                  onChange={(e) => setCustomAddress(e.target.value)}
+                  id="Plz"
+                  name="Plz"
+                  value={formData.user.Plz}
+                  onChange={handleChange}
                   required
                   className="w-2/5  placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
                 // placeholder="Geben Sie Ihre Adresse ein"
                 />
                 <input
                   type="text"
-                  id="customAddress"
-                  name="customAddress"
-                  value={customAddress}
-                  onChange={(e) => setCustomAddress(e.target.value)}
+                  id="OrtLieferung"
+                  name="OrtLieferung"
+                  value={formData.user.OrtLieferung}
+                  onChange={handleChange}
                   required
                   className="w-3/5 placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
                 // placeholder="Geben Sie Ihre Adresse ein"
