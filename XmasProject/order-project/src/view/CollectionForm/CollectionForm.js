@@ -1,49 +1,48 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
-import axios from 'axios';
-import Modal from "react-modal"
-import { pickUpAddressList } from '../../asset/data/data';
-import { pickUpTime } from '../../asset/data/data';
-import { pickUpQuantity } from '../../asset/data/data';
-import "./CollectionForm.css"
-import CheckIcon from "../../asset/checkIcon.png"
-import { data } from 'autoprefixer';
+import React, { useEffect } from "react";
+import { useState } from "react";
+import axios from "axios";
+import Modal from "react-modal";
+import { pickUpAddressList } from "../../asset/data/data";
+import { pickUpTime } from "../../asset/data/data";
+import { pickUpQuantity } from "../../asset/data/data";
+import "./CollectionForm.css";
+import CheckIcon from "../../asset/checkIcon.png";
+import { data } from "autoprefixer";
 const CustomerForm = () => {
-  const [storedValue, setStoredValue] = useState()
+  const [storedValue, setStoredValue] = useState();
   const [customAddress, setCustomAddress] = useState(""); // Địa chỉ nhập tay
   const [selectedRadio, setSelectedRadio] = useState(""); // Giá trị radio được chọn
   const [selectedBranch, setSelectedBranch] = useState(""); // Chi nhánh được chọn
   const [selectedAddress, setSelectedAddress] = useState(""); // Địa chỉ trong dropdown
 
-  const [listOrder, setListOrder] = useState()
+  const [listOrder, setListOrder] = useState();
   const [loading, setLoading] = useState(false);
-  const [discount, setDiscount] = useState(false)
+  const [discount, setDiscount] = useState(false);
   const [formData, setFormData] = useState({
     user: {
-      first_name: '',
-      last_name: '',
-      email: '',
-      phone: '',
-      zip_code: '',
-      city: '',
-      street: '',
-      discount: '',
-      selectedAddress: '',
-      customAddress: '',
-      selectedRadio: '',
-      titel: '' ,
-      vornameLieferung:'' ,
-      nachnameLieferung:'' ,
-      startBeLieferung :'',
-      HausnrLieferung:'' ,
-      adresszusatzLieferung:'' ,
-      plzLieferung:'',
-      OrtLieferung:''
-
+      first_name: "",
+      last_name: "",
+      email: "",
+      phone: "",
+      zip_code: "",
+      city: "",
+      street: "",
+      discount: "",
+      selectedAddress: "",
+      customAddress: "",
+      selectedRadio: "",
+      titel: "",
+      vornameLieferung: "",
+      nachnameLieferung: "",
+      startBeLieferung: "",
+      HausnrLieferung: "",
+      adresszusatzLieferung: "",
+      plzLieferung: "",
+      OrtLieferung: "",
     },
     agreement: false,
   });
-  const [boxAdd, setBoxAdd] = useState(false)
+  const [boxAdd, setBoxAdd] = useState(false);
   // const [selectedRadio, setSelectedRadio] = useState(""); // Lưu trữ radio đã chọn (A, B hoặc C)
   // const [selectedAddress, setSelectedAddress] = useState(""); // Lưu trữ địa chỉ đã chọn
   // const [branches, setBranches] = useState([
@@ -64,26 +63,26 @@ const CustomerForm = () => {
   //     ],
   //   },
   // ]);
-  const [selectedPickupAddress, setSelectedPickupAddress] = useState('');
-  const [selectedPickupTime, setSelectedPickupTime] = useState('');
-  const [selectedPickupQuantity, setselectedPickupQuantity] = useState('');
-  const [discountErrorMessage, setDiscountErrorMessage] = useState('');
+  const [selectedPickupAddress, setSelectedPickupAddress] = useState("");
+  const [selectedPickupTime, setSelectedPickupTime] = useState("");
+  const [selectedPickupQuantity, setselectedPickupQuantity] = useState("");
+  const [discountErrorMessage, setDiscountErrorMessage] = useState("");
 
   const handleVoucher = () => {
-    const discountCode = formData.user.discount.toLowerCase()
-    if (
-      discountCode === "weihnacht2023"
-    ) {
-      setDiscountErrorMessage('');
+    const discountCode = formData.user.discount.toLowerCase();
+    if (discountCode === "weihnacht2023") {
+      setDiscountErrorMessage("");
       setDiscount(true);
     } else {
-      setDiscountErrorMessage('Bitte geben Sie einen gültigen Gutscheincode ein.');
+      setDiscountErrorMessage(
+        "Bitte geben Sie einen gültigen Gutscheincode ein."
+      );
       setDiscount(false);
     }
   };
 
   const branches = [
-    { name: "Abholung", addresses: ["CôCô Indochine - Augustinerstraße 1, 90403 Nürnberg", "CôCô Sushi and Grill - Obstmarkt 3, 90762 Fürth","CôCô Erlangen - Nürnberger Str. 31, 91052 Erlangen"] },
+    { name: "Abholung", addresses: ["aus Breuninger Haus Abholung*"] },
   ];
 
   const handleRadioChange = (value) => {
@@ -105,21 +104,20 @@ const CustomerForm = () => {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    console.log('Check target:', e.target);  // Log để kiểm tra thông tin input
-    console.log('Current name:', name);      // Log tên trường (name) của input
-    console.log('Current value:', value);
-    if (name === 'agreement') {
+    console.log("Check target:", e.target); // Log để kiểm tra thông tin input
+    console.log("Current name:", name); // Log tên trường (name) của input
+    console.log("Current value:", value);
+    if (name === "agreement") {
       setFormData((prevData) => ({
         ...prevData,
         [name]: checked,
       }));
-    }
-    else {
+    } else {
       setFormData((prevData) => ({
         ...prevData,
         user: {
           ...prevData.user,
-          [name]: type === 'checkbox' ? checked : value,
+          [name]: type === "checkbox" ? checked : value,
         },
       }));
     }
@@ -128,38 +126,40 @@ const CustomerForm = () => {
     e.preventDefault();
     if (!formData.agreement) {
       // Handle the case when the agreement is not accepted
-      console.log('Please accept all terms and conditions.');
+      console.log("Please accept all terms and conditions.");
       return;
     }
     setLoading(true);
     // console.log('data :' ,data)
-    console.log('data :', formData)
-    console.log('selectedPickupTime :', selectedPickupTime)
-    console.log('selectedPickupAddress :', selectedPickupAddress)
-    console.log('selectedPickupQuantity:', selectedPickupQuantity)
-    console.log('selectedAddress :', selectedAddress)
-    console.log('customAddress :', customAddress)
+    console.log("data :", formData);
+    console.log("selectedPickupTime :", selectedPickupTime);
+    console.log("selectedPickupAddress :", selectedPickupAddress);
+    console.log("selectedPickupQuantity:", selectedPickupQuantity);
+    console.log("selectedAddress :", selectedAddress);
+    console.log("customAddress :", customAddress);
 
     try {
+      const { data } = await axios.post(
+        "http://localhost:3001/customers/create-customer",
+        {
+          firstName: formData.user.first_name,
+          lastName: formData.user.last_name,
+          email: formData.user.email,
+          phone: formData.user.phone,
+          productQuantity: selectedPickupQuantity,
+          address: selectedPickupAddress,
+          appointmentDate: selectedPickupTime,
 
-      const { data } = await axios.post("http://localhost:3001/customers/create-customer", {
-        firstName: formData.user.first_name,
-        lastName: formData.user.last_name,
-        email: formData.user.email,
-        phone: formData.user.phone,
-        productQuantity: selectedPickupQuantity,
-        address: selectedPickupAddress,
-        appointmentDate: selectedPickupTime,
+          // form thêm khi chọn option :
 
-        // form thêm khi chọn option :
-       
-        // products: {
-        //     product_name: "Ganspaket",
-        //     product_quantity: selectedPickupQuantity,
-        //     discount_code: formData.user.discount,
-        // }
-      });
-      console.log(data)
+          // products: {
+          //     product_name: "Ganspaket",
+          //     product_quantity: selectedPickupQuantity,
+          //     discount_code: formData.user.discount,
+          // }
+        }
+      );
+      console.log(data);
 
       setBoxAdd(true);
       setListOrder(data);
@@ -168,14 +168,12 @@ const CustomerForm = () => {
       //     setBoxAdd(false);
       //     window.location.reload();
       // }, 3000);
-
     } catch (error) {
       // Handle error
       console.error("Error submitting form:", error);
     } finally {
       setLoading(false);
     }
-
   };
   return (
     <div
@@ -206,8 +204,8 @@ const CustomerForm = () => {
                 desktopLarge:text-[15px]
             "
       >
-        Bitte bestellen Sie Ihr Gänsepaket spätestens 2 Tage vor Abhol-oder Liefertermin.
-        Letze Bestellannahme ist am 22.12.2023
+        Bitte bestellen Sie Ihr Gänsepaket spätestens 2 Tage vor Abhol-oder
+        Liefertermin. Letze Bestellannahme ist am 22.12.2023
       </div>
       <div
         className="w-full flex flex-col justify-center items-center font-Changa text-textColor
@@ -377,10 +375,15 @@ const CustomerForm = () => {
         >
           {/* Radio buttons cho Chi nhánh A, B, C */}
           <div className="flex flex-col gap-2">
-            <label className="text-textColor font-semibold text-lg">Lieferoptionen :</label>
+            <label className="text-textColor font-semibold text-lg">
+              Lieferoptionen :
+            </label>
             <div className="flex flex-wrap gap-2">
               {branches.map((branch, index) => (
-                <label key={index} className=" text-textColor flex items-center space-x-2">
+                <label
+                  key={index}
+                  className=" text-textColor flex items-center space-x-2"
+                >
                   <input
                     type="radio"
                     name="branch"
@@ -402,7 +405,7 @@ const CustomerForm = () => {
                   onChange={(e) => handleRadioChange(e.target.value)}
                   className="form-radio text-blue-500"
                 />
-                <span >Lieferung </span>
+                <span>Lieferung </span>
               </label>
             </div>
           </div>
@@ -410,7 +413,9 @@ const CustomerForm = () => {
           {/* Hiển thị dropdown nếu chọn một chi nhánh cụ thể */}
           {selectedRadio && selectedRadio !== "other" && selectedBranch && (
             <div className="flex flex-col gap-2 w-full mt-4">
-              <label className=" text-textColor font-semibold text-lg">Adresse auswählen:</label>
+              <label className=" text-textColor font-semibold text-lg">
+                Adresse auswählen:
+              </label>
               <select
                 id="address"
                 name="address"
@@ -435,13 +440,12 @@ const CustomerForm = () => {
             </div>
           )}
 
-
-
           {/* Hiển thị input nếu chọn "other" */}
           {selectedRadio === "other" && (
             <div className="flex flex-col gap-2 w-full mt-4">
               <label className=" text-textColor font-semibold text-lg">
-                Titel  (optional) :</label>
+                Titel (optional) :
+              </label>
               <input
                 type="text"
                 id="titel"
@@ -453,19 +457,22 @@ const CustomerForm = () => {
                 placeholder="TitelLieferung"
               />
               <label className=" text-textColor font-semibold text-lg">
-                Vorname :</label>
+                Vorname :
+              </label>
               <input
                 type="text"
                 id="vornameLieferung"
                 name="vornameLieferung"
                 value={formData.user.vornameLieferung}
-                onChange={handleChange}handleChange
+                onChange={handleChange}
+                handleChange
                 required
                 className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
-              // placeholder="Geben Sie Ihre Adresse ein"
+                // placeholder="Geben Sie Ihre Adresse ein"
               />
               <label className=" text-textColor font-semibold text-lg">
-                Nachname :</label>
+                Nachname :
+              </label>
               <input
                 type="text"
                 id="nachnameLieferung"
@@ -474,11 +481,12 @@ const CustomerForm = () => {
                 onChange={handleChange}
                 required
                 className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
-              // placeholder="Geben Sie Ihre Adresse ein"
+                // placeholder="Geben Sie Ihre Adresse ein"
               />
               <label className=" text-textColor font-semibold text-lg">
-                StartBe & Hausnr :</label>
-              <div className="flex items-center gap-5" >
+                StartBe & Hausnr :
+              </label>
+              <div className="flex items-center gap-5">
                 <input
                   type="text"
                   id="startBeLieferung"
@@ -487,7 +495,7 @@ const CustomerForm = () => {
                   onChange={handleChange}
                   required
                   className="w-3/5  placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
-                // placeholder="Geben Sie Ihre Adresse ein"
+                  // placeholder="Geben Sie Ihre Adresse ein"
                 />
                 <input
                   type="text"
@@ -497,11 +505,12 @@ const CustomerForm = () => {
                   onChange={handleChange}
                   required
                   className="w-2/5 placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
-                // placeholder="Geben Sie Ihre Adresse ein"
+                  // placeholder="Geben Sie Ihre Adresse ein"
                 />
               </div>
               <label className=" text-textColor font-semibold text-lg">
-                Adresszusatz (optional) :</label>
+                Adresszusatz (optional) :
+              </label>
               <input
                 type="text"
                 id="adresszusatzLieferung"
@@ -510,12 +519,13 @@ const CustomerForm = () => {
                 onChange={handleChange}
                 required
                 className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
-              // placeholder="Geben Sie Ihre Adresse ein"
+                // placeholder="Geben Sie Ihre Adresse ein"
               />
 
               <label className=" text-textColor font-semibold text-lg">
-                Plz & Ort :</label>
-              <div className="flex items-center gap-5" >
+                Plz & Ort :
+              </label>
+              <div className="flex items-center gap-5">
                 <input
                   type="text"
                   id="Plz"
@@ -524,7 +534,7 @@ const CustomerForm = () => {
                   onChange={handleChange}
                   required
                   className="w-2/5  placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
-                // placeholder="Geben Sie Ihre Adresse ein"
+                  // placeholder="Geben Sie Ihre Adresse ein"
                 />
                 <input
                   type="text"
@@ -534,19 +544,17 @@ const CustomerForm = () => {
                   onChange={handleChange}
                   required
                   className="w-3/5 placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
-                // placeholder="Geben Sie Ihre Adresse ein"
+                  // placeholder="Geben Sie Ihre Adresse ein"
                 />
               </div>
               <label className=" text-textColor font-semibold text-lg">
-              Land </label>
+                Land{" "}
+              </label>
               <label className=" text-textColor font-semibold text-lg">
-              DEutschaland </label>
+                Deutschaland{" "}
+              </label>
             </div>
-
-
           )}
-
-
 
           {/* Chọn thời gian, chỉ hiển thị nếu không chọn "other" */}
           {selectedRadio !== "other" && (
@@ -610,8 +618,9 @@ const CustomerForm = () => {
               value={formData.user.discount}
               onChange={handleChange}
               // required
-              className={`w-[185px] placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid ${discount ? "border-red-500" : "border-textColor"
-                } rounded-lg focus:border-textColor focus:border-4
+              className={`w-[185px] placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid ${
+                discount ? "border-red-500" : "border-textColor"
+              } rounded-lg focus:border-textColor focus:border-4
                             desktop:placeholder:text-xl desktop:text-xl
                             desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl
                         `}
@@ -713,8 +722,7 @@ const CustomerForm = () => {
             </span>
             <p className="font-bold text-center desktop:text-3xl">CÔCÔ</p>
             <span className="text-center desktop:text-3xl">
-              Ihre Bestellung Nr.{listOrder?.order_number} wird
-              berücksichtigt.
+              Ihre Bestellung Nr.{listOrder?.order_number} wird berücksichtigt.
             </span>
             <span className="text-center desktop:text-3xl">
               Wir senden Ihnen eine Bestellbestätigung an:
@@ -735,6 +743,6 @@ const CustomerForm = () => {
       </form>
     </div>
   );
-}
+};
 
-export default CustomerForm
+export default CustomerForm;

@@ -67,7 +67,7 @@ const Product = (props) => {
             <div className="w-[300px] flex justify-center font-DancingScript px-3 py-4 bg-[#ffbb33] text-[#2d2322] font-extrabold over:border-4 hover:border-white hover:bg-[#ffbb3a] hover:text-white rounded-2xl mb-6 cursor-pointer desktopLarge:px-5 desktopLarge:py-7 ">
                 <button 
                 onClick={scrollToSection}
-                className="w-full h-full text-3xl" type="submit">Jetzt online bestellen</button>
+                className="w-full h-full text-3xl" type="submit">Jetzt bestellen</button>
             </div>
             {/* <img src={Santa} className="w-full h-36
                 mobileSmall:h-auto
