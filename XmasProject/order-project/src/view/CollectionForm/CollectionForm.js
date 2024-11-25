@@ -4,10 +4,13 @@ import axios from "axios";
 import Modal from "react-modal";
 import { pickUpAddressList } from "../../asset/data/data";
 import { pickUpTime } from "../../asset/data/data";
+import { pickUpDate } from "../../asset/data/data";
 import { pickUpQuantity } from "../../asset/data/data";
 import "./CollectionForm.css";
 import CheckIcon from "../../asset/checkIcon.png";
 import { data } from "autoprefixer";
+import moment from "moment";
+
 const CustomerForm = () => {
   const [storedValue, setStoredValue] = useState();
   const [customAddress, setCustomAddress] = useState(""); // Địa chỉ nhập tay
@@ -65,6 +68,7 @@ const CustomerForm = () => {
   // ]);
   const [selectedPickupAddress, setSelectedPickupAddress] = useState("");
   const [selectedPickupTime, setSelectedPickupTime] = useState("");
+  const [selectPickupDate, setSelectedPickupDate] = useState("");
   const [selectedPickupQuantity, setselectedPickupQuantity] = useState("");
   const [discountErrorMessage, setDiscountErrorMessage] = useState("");
 
@@ -205,7 +209,7 @@ const CustomerForm = () => {
             "
       >
         Bitte bestellen Sie Ihr Gänsepaket spätestens 2 Tage vor Abhol-oder
-        Liefertermin. Letze Bestellannahme ist am 22.12.2023
+        Liefertermin.
       </div>
       <div
         className="w-full flex flex-col justify-center items-center font-Changa text-textColor
@@ -580,12 +584,33 @@ const CustomerForm = () => {
                   </option>
                 ))}
               </select>
-              <label
+              <select
+                id="pickUpDate"
+                name="pickUpDate"
+                value={selectPickupDate}
+                onChange={(e) => setSelectedPickupDate(e.target.value)}
+                required
+                className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
+              >
+                <option value="" disabled className="italic text-sm">
+                  Abholdatum 
+                </option>
+                {pickUpDate.map((item, index) => (
+                  <option
+                    className="text-sm text-textColor block"
+                    key={index}
+                    value={moment(item.date).format("DD.MM.YYYY")}
+                  >
+                    {moment(item.date).format("DD.MM.YYYY")} {/* Định dạng ngày theo ý muốn */}
+                  </option>
+                ))}
+              </select>
+              {/* <label
                 htmlFor="pickupTime"
                 className="text-textColor font-Montserrat text-sm italic desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
               >
                 Nur am 24.12 zwischen 12.00 - 15.00 Uhr
-              </label>
+              </label> */}
             </div>
           )}
         </div>

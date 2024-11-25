@@ -53,13 +53,14 @@ const TextIntro = () => {
       
 
       <div
-        className="text-left font-Changa text-textColor  font-bold leading-relaxed 
+        className="text-left font-Changa text-textColor  font-bold leading-loose
  mx-auto max-w-[800px] /* Thu hẹp chiều rộng */
   pl-4  /* Thêm padding trái */
-  mobileSmall:text-[14px] mobileSmall:leading-snug
-  tablet:text-[18px] tablet:leading-normal
-  desktop:text-[16px] desktop:leading-relaxed
-  desktopLarge:text-[24px] desktopLarge:leading-loose"
+  text-2xl
+  mobileSmall:text-base mobileSmall:leading-snug
+  tablet:text-xl tablet:leading-normal
+  desktop:text-xl desktop:leading-relaxed
+  desktopLarge:text-xl desktopLarge:leading-loose"
       >
         <p>
           <strong className=" text-[#ffbb33]">
