@@ -130,7 +130,7 @@ const Footer = () => {
                 desktop:justify-start desktop:items-start desktop:text-[11px]
                 desktopLarge:text-[15px]
             ">
-                            Weihnachten 24.12.2024:
+                            Weihnachten 24.12.2024 &
 
                         </p>
                         <p className="flex text-footerText font-Lato
@@ -329,7 +329,7 @@ const Footer = () => {
                 desktop:justify-start desktop:items-start desktop:text-[11px]
                 desktopLarge:text-[15px]
             ">
-                            Weihnachten 24.12.2024:
+                            Weihnachten 24.12.2024 &
 
                         </p>
                         <p className="flex text-footerText font-Lato
@@ -417,7 +417,7 @@ const Footer = () => {
                 desktop:justify-start desktop:items-start desktop:text-[11px]
                 desktopLarge:text-[15px]
             ">
-                              17:00 Uhr bis 23:00 Uhr
+                            17:00 Uhr bis 23:00 Uhr
 
                         </p>
                     </div>
@@ -617,11 +617,12 @@ const Footer = () => {
                 desktopLarge:text-[15px]
             ">
                             {/* 10:00 Uhr bis 23:00 Uhr Frühstücks- */}
-                            10:00 Uhr bis 23:00 Uhr
+                            15:00 Uhr bis 23:00 Uhr
+
 
                         </p>
 
-                        <p className="flex text-[8px] text-footerText font-Lato
+                        {/* <p className="flex text-[8px] text-footerText font-Lato
                 mobileSmall:text-[8px]
                 mobileLarge:text-[9px]
                 mobileLarger:text-[10px]
@@ -630,11 +631,12 @@ const Footer = () => {
                 desktop:justify-start desktop:items-start desktop:text-[11px]
                 desktopLarge:text-[15px]
             ">
-                            und Bruchbuffet von 10:00 Uhr
+                            Neujhar 01.01.2024
 
-                        </p>
 
-                        <p className="flex text-footerText font-Lato
+                        </p> */}
+
+                        {/* <p className="flex text-footerText font-Lato
                 mobileSmall:text-[8px]
                 mobileLarge:text-[9px]
                 mobileLarger:text-[10px]
@@ -645,7 +647,7 @@ const Footer = () => {
             ">
                             bis 15:00 Uhr
 
-                        </p>
+                        </p> */}
                     </div>
                 </div>
             </div>

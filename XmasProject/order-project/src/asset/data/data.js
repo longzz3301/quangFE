@@ -1,4 +1,4 @@
-export const selectedAddress = [
+export const selectedAddressCoCo = [
     {
         address: "CôCô Indochine - Augustinerstraße 1, 90403 Nürnberg",
         id: 1

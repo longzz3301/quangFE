@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import Modal from "react-modal";
-import { pickUpAddressList } from "../../asset/data/data";
+import { selectedAddressCoCo } from "../../asset/data/data";
 import { pickUpTime } from "../../asset/data/data";
 import { pickUpDate } from "../../asset/data/data";
 import { pickUpQuantity } from "../../asset/data/data";
@@ -86,7 +86,9 @@ const CustomerForm = () => {
   };
 
   const branches = [
-    { name: "Abholung", addresses: ["aus Breuninger Haus Abholung*"] },
+    {
+      name: "Abholung", addresses: ["CôCô Indochine - Augustinerstraße 1, 90403 Nürnberg"," CôCô Sushi and Grill - Obstmarkt 3, 90762 Fürth","CôCô Erlangen - Nürnberger Str. 31, 91052 Erlangen"]
+    }
   ];
 
   const handleRadioChange = (value) => {
@@ -429,7 +431,7 @@ const CustomerForm = () => {
                 className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
               >
                 <option value="" disabled className="italic text-sm">
-                  Wählen Sie Ihre Adresse aus Breuninger Haus {selectedRadio}*
+                Wählen Sie die Adresse des CôCô {selectedRadio}*
                 </option>
                 {selectedBranch.addresses.map((address, index) => (
                   <option
@@ -445,7 +447,7 @@ const CustomerForm = () => {
           )}
 
           {/* Hiển thị input nếu chọn "other" */}
-          {selectedRadio === "other" && (
+          {selectedRadio && selectedRadio === "other" && (
             <div className="flex flex-col gap-2 w-full mt-4">
               <label className=" text-textColor font-semibold text-lg">
                 Titel (optional) :
@@ -458,7 +460,7 @@ const CustomerForm = () => {
                 onChange={handleChange}
                 required
                 className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
-                placeholder="TitelLieferung"
+                placeholder=""
               />
               <label className=" text-textColor font-semibold text-lg">
                 Vorname :
@@ -488,7 +490,7 @@ const CustomerForm = () => {
                 // placeholder="Geben Sie Ihre Adresse ein"
               />
               <label className=" text-textColor font-semibold text-lg">
-                StartBe & Hausnr :
+              Straße & Hausnr :
               </label>
               <div className="flex items-center gap-5">
                 <input
@@ -527,7 +529,7 @@ const CustomerForm = () => {
               />
 
               <label className=" text-textColor font-semibold text-lg">
-                Plz & Ort :
+              PLZ & ORT :
               </label>
               <div className="flex items-center gap-5">
                 <input
@@ -551,6 +553,27 @@ const CustomerForm = () => {
                   // placeholder="Geben Sie Ihre Adresse ein"
                 />
               </div>
+              <select
+                id="pickUpDate"
+                name="pickUpDate"
+                value={selectPickupDate}
+                onChange={(e) => setSelectedPickupDate(e.target.value)}
+                required
+                className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
+              >
+                <option value="" disabled className="italic text-sm">
+                  Abholdatum 
+                </option>
+                {pickUpDate.map((item, index) => (
+                  <option
+                    className="text-sm text-textColor block"
+                    key={index}
+                    value={moment(item.date).format("DD.MM.YYYY")}
+                  >
+                    {moment(item.date).format("DD.MM.YYYY")} {/* Định dạng ngày theo ý muốn */}
+                  </option>
+                ))}
+              </select>
               <label className=" text-textColor font-semibold text-lg">
                 Land{" "}
               </label>
@@ -561,7 +584,7 @@ const CustomerForm = () => {
           )}
 
           {/* Chọn thời gian, chỉ hiển thị nếu không chọn "other" */}
-          {selectedRadio !== "other" && (
+          {selectedRadio !== "other" && selectedBranch && (
             <div className="flex flex-col gap-2 w-full mt-4">
               <select
                 id="pickupTime"
