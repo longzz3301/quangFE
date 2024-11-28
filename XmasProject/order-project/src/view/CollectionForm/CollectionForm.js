@@ -3,7 +3,9 @@ import { useState } from "react";
 import axios from "axios";
 import Modal from "react-modal";
 import { selectedAddressCoCo } from "../../asset/data/data";
-import { pickUpTime } from "../../asset/data/data";
+import { pickUpTimeLieferung } from "../../asset/data/data";
+import { pickUpTimeAbholung } from "../../asset/data/data";
+
 import { pickUpDate } from "../../asset/data/data";
 import { pickUpQuantity } from "../../asset/data/data";
 import "./CollectionForm.css";
@@ -454,7 +456,7 @@ const CustomerForm = () => {
                 <option value="" disabled className="italic text-sm">
                   Uhrzeit der Abholung*
                 </option>
-                {pickUpTime.map((item, index) => (
+                {pickUpTimeAbholung.map((item, index) => (
                   <option
                     className="text-sm text-textColor block"
                     key={index}
@@ -491,7 +493,7 @@ const CustomerForm = () => {
           {/* Hiển thị input nếu chọn "other" */}
           {selectedRadio && selectedRadio === "other" && (
             <div className="flex flex-col gap-2 w-full mt-4">
-              <label className=" text-textColor font-semibold text-lg">
+              <label className=" text-textColor font-Montserrat text-lg">
                 Titel (optional) :
               </label>
               <input
@@ -504,7 +506,7 @@ const CustomerForm = () => {
                 className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
                 placeholder=""
               />
-              <label className=" text-textColor font-semibold text-lg">
+              <label className=" text-textColor font-Montserrat text-lg">
                 Vorname :
               </label>
               <input
@@ -515,10 +517,10 @@ const CustomerForm = () => {
                 onChange={handleChange}
                 handleChange
                 required
-                className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
+               className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
                 // placeholder="Geben Sie Ihre Adresse ein"
               />
-              <label className=" text-textColor font-semibold text-lg">
+              <label className=" text-textColor font-Montserrat text-lg">
                 Nachname :
               </label>
               <input
@@ -528,10 +530,10 @@ const CustomerForm = () => {
                 value={formData.user.nachnameLieferung}
                 onChange={handleChange}
                 required
-                className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
+               className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
                 // placeholder="Geben Sie Ihre Adresse ein"
               />
-              <label className=" text-textColor font-semibold text-lg">
+              <label className=" text-textColor font-Montserrat text-lg">
               Straße & Hausnr :
               </label>
               <div className="flex items-center gap-5">
@@ -556,9 +558,10 @@ const CustomerForm = () => {
                   // placeholder="Geben Sie Ihre Adresse ein"
                 />
               </div>
-              <label className=" text-textColor font-semibold text-lg">
+              <label className=" text-textColor font-Montserrat text-lg">
                 Adresszusatz (optional) :
               </label>
+              
               <input
                 type="text"
                 id="adresszusatzLieferung"
@@ -570,7 +573,54 @@ const CustomerForm = () => {
                 // placeholder="Geben Sie Ihre Adresse ein"
               />
 
-              <label className=" text-textColor font-semibold text-lg">
+<label className=" text-textColor font-Montserrat text-lg">
+                Gewünschte Lieferzeit
+              </label>
+              <select
+                id="pickUpDate"
+                name="pickUpDate"
+                value={selectPickupDate}
+                onChange={(e) => setSelectedPickupDate(e.target.value)}
+                required
+                className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
+              >
+                <option value="" disabled className="italic text-sm">
+                  Abholdatum 
+                </option>
+                {pickUpDate.map((item, index) => (
+                  <option
+                    className="text-sm text-textColor block"
+                    key={index}
+                    value={moment(item.date).format("DD.MM.YYYY")}
+                  >
+                    {moment(item.date).format("DD.MM.YYYY")} {/* Định dạng ngày theo ý muốn */}
+                  </option>
+                ))}
+              </select>
+
+              <select
+                id="pickupTime"
+                name="pickupTime"
+                value={selectedPickupTime}
+                onChange={(e) => setSelectedPickupTime(e.target.value)}
+                required
+                className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
+              >
+                <option value="" disabled className="italic text-sm">
+                  Uhrzeit der Abholung*
+                </option>
+                {pickUpTimeLieferung.map((item, index) => (
+                  <option
+                    className="text-sm text-textColor block"
+                    key={index}
+                    value={item.time}
+                  >
+                    {item.time}
+                  </option>
+                ))}
+              </select>
+
+              <label className=" text-textColor font-Montserrat text-lg">
               PLZ & ORT :
               </label>
               <div className="flex items-center gap-5">
@@ -595,31 +645,11 @@ const CustomerForm = () => {
                   // placeholder="Geben Sie Ihre Adresse ein"
                 />
               </div>
-              <select
-                id="pickUpDate"
-                name="pickUpDate"
-                value={selectPickupDate}
-                onChange={(e) => setSelectedPickupDate(e.target.value)}
-                required
-                className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
-              >
-                <option value="" disabled className="italic text-sm">
-                  Abholdatum 
-                </option>
-                {pickUpDate.map((item, index) => (
-                  <option
-                    className="text-sm text-textColor block"
-                    key={index}
-                    value={moment(item.date).format("DD.MM.YYYY")}
-                  >
-                    {moment(item.date).format("DD.MM.YYYY")} {/* Định dạng ngày theo ý muốn */}
-                  </option>
-                ))}
-              </select>
-              <label className=" text-textColor font-semibold text-lg">
+             
+              <label className=" text-textColor font-Montserrat text-lg">
                 Land{" "}
               </label>
-              <label className=" text-textColor font-semibold text-lg">
+              <label className=" text-textColor font-Montserrat text-lg">
                 Deutschaland{" "}
               </label>
             </div>
