@@ -89,7 +89,7 @@ const CustomerForm = () => {
 
   const branches = [
     {
-      name: "Abholung", addresses: ["CôCô Indochine - Augustinerstraße 1, 90403 Nürnberg"," CôCô Sushi and Grill - Obstmarkt 3, 90762 Fürth","CôCô Erlangen - Nürnberger Str. 31, 91052 Erlangen"]
+      name: "Abholung", addresses: ["CôCô Indochine - Augustinerstraße 1, 90403 Nürnberg", " CôCô Sushi and Grill - Obstmarkt 3, 90762 Fürth", "CôCô Erlangen - Nürnberger Str. 31, 91052 Erlangen"]
     }
   ];
 
@@ -421,8 +421,8 @@ const CustomerForm = () => {
           {/* Hiển thị dropdown nếu chọn một chi nhánh cụ thể */}
           {selectedRadio && selectedRadio !== "other" && selectedBranch && (
             <div className="flex flex-col gap-2 w-full mt-4">
-              <label className=" text-textColor font-semibold text-lg">
-                Adresse auswählen:
+              <label className=" text-textColor font-Montserrat text-lg">
+              Wählen Sie die Adresse des CôCô :
               </label>
               <select
                 id="address"
@@ -433,7 +433,7 @@ const CustomerForm = () => {
                 className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
               >
                 <option value="" disabled className="italic text-sm">
-                Wählen Sie die Adresse des CôCô 
+                  {/* Wählen Sie die Adresse des CôCô */}
                 </option>
                 {selectedBranch.addresses.map((address, index) => (
                   <option
@@ -445,27 +445,10 @@ const CustomerForm = () => {
                   </option>
                 ))}
               </select>
-              <select
-                id="pickupTime"
-                name="pickupTime"
-                value={selectedPickupTime}
-                onChange={(e) => setSelectedPickupTime(e.target.value)}
-                required
-                className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
-              >
-                <option value="" disabled className="italic text-sm">
-                  Uhrzeit der Abholung*
-                </option>
-                {pickUpTimeAbholung.map((item, index) => (
-                  <option
-                    className="text-sm text-textColor block"
-                    key={index}
-                    value={item.time}
-                  >
-                    {item.time}
-                  </option>
-                ))}
-              </select>
+           
+              <label className=" text-textColor font-Montserrat text-lg">
+              Gewünschter Liefertermin
+              </label>
               <select
                 id="pickUpDate"
                 name="pickUpDate"
@@ -475,7 +458,7 @@ const CustomerForm = () => {
                 className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
               >
                 <option value="" disabled className="italic text-sm">
-                  Abholdatum 
+                  {/* Abholdatum */}
                 </option>
                 {pickUpDate.map((item, index) => (
                   <option
@@ -484,6 +467,31 @@ const CustomerForm = () => {
                     value={moment(item.date).format("DD.MM.YYYY")}
                   >
                     {moment(item.date).format("DD.MM.YYYY")} {/* Định dạng ngày theo ý muốn */}
+                  </option>
+                ))}
+              </select>
+
+              <label className=" text-textColor font-Montserrat text-lg">
+              Gewünschte Lieferzeit
+              </label>
+              <select
+                id="pickupTime"
+                name="pickupTime"
+                value={selectedPickupTime}
+                onChange={(e) => setSelectedPickupTime(e.target.value)}
+                required
+                className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
+              >
+                <option value="" disabled className="italic text-sm">
+                {/* Gewünschter Liefertermin */}
+                </option>
+                {pickUpTimeAbholung.map((item, index) => (
+                  <option
+                    className="text-sm text-textColor block"
+                    key={index}
+                    value={item.time}
+                  >
+                    {item.time}
                   </option>
                 ))}
               </select>
@@ -517,8 +525,8 @@ const CustomerForm = () => {
                 onChange={handleChange}
                 handleChange
                 required
-               className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
-                // placeholder="Geben Sie Ihre Adresse ein"
+                className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
+              // placeholder="Geben Sie Ihre Adresse ein"
               />
               <label className=" text-textColor font-Montserrat text-lg">
                 Nachname :
@@ -530,11 +538,11 @@ const CustomerForm = () => {
                 value={formData.user.nachnameLieferung}
                 onChange={handleChange}
                 required
-               className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
-                // placeholder="Geben Sie Ihre Adresse ein"
+                className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
+              // placeholder="Geben Sie Ihre Adresse ein"
               />
               <label className=" text-textColor font-Montserrat text-lg">
-              Straße & Hausnr :
+                Straße & Hausnr :
               </label>
               <div className="flex items-center gap-5">
                 <input
@@ -545,7 +553,7 @@ const CustomerForm = () => {
                   onChange={handleChange}
                   required
                   className="w-3/5  placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
-                  // placeholder="Geben Sie Ihre Adresse ein"
+                // placeholder="Geben Sie Ihre Adresse ein"
                 />
                 <input
                   type="text"
@@ -555,13 +563,13 @@ const CustomerForm = () => {
                   onChange={handleChange}
                   required
                   className="w-2/5 placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
-                  // placeholder="Geben Sie Ihre Adresse ein"
+                // placeholder="Geben Sie Ihre Adresse ein"
                 />
               </div>
               <label className=" text-textColor font-Montserrat text-lg">
                 Adresszusatz (optional) :
               </label>
-              
+
               <input
                 type="text"
                 id="adresszusatzLieferung"
@@ -570,11 +578,11 @@ const CustomerForm = () => {
                 onChange={handleChange}
                 required
                 className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
-                // placeholder="Geben Sie Ihre Adresse ein"
+              // placeholder="Geben Sie Ihre Adresse ein"
               />
 
-<label className=" text-textColor font-Montserrat text-lg">
-                Gewünschte Lieferzeit
+              <label className=" text-textColor font-Montserrat text-lg">
+                Gewünschter Liefertermin
               </label>
               <select
                 id="pickUpDate"
@@ -585,7 +593,7 @@ const CustomerForm = () => {
                 className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
               >
                 <option value="" disabled className="italic text-sm">
-                  Abholdatum 
+                  {/* Abholdatum  */}
                 </option>
                 {pickUpDate.map((item, index) => (
                   <option
@@ -598,6 +606,9 @@ const CustomerForm = () => {
                 ))}
               </select>
 
+              <label className=" text-textColor font-Montserrat text-lg">
+                Gewünschte Lieferzeit
+              </label>
               <select
                 id="pickupTime"
                 name="pickupTime"
@@ -607,7 +618,7 @@ const CustomerForm = () => {
                 className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
               >
                 <option value="" disabled className="italic text-sm">
-                  Uhrzeit der Abholung*
+                  {/* Gewünschte Lieferzeit */}
                 </option>
                 {pickUpTimeLieferung.map((item, index) => (
                   <option
@@ -621,7 +632,7 @@ const CustomerForm = () => {
               </select>
 
               <label className=" text-textColor font-Montserrat text-lg">
-              PLZ & ORT :
+                PLZ & ORT :
               </label>
               <div className="flex items-center gap-5">
                 <input
@@ -632,7 +643,7 @@ const CustomerForm = () => {
                   onChange={handleChange}
                   required
                   className="w-2/5  placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
-                  // placeholder="Geben Sie Ihre Adresse ein"
+                // placeholder="Geben Sie Ihre Adresse ein"
                 />
                 <input
                   type="text"
@@ -642,10 +653,10 @@ const CustomerForm = () => {
                   onChange={handleChange}
                   required
                   className="w-3/5 placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
-                  // placeholder="Geben Sie Ihre Adresse ein"
+                // placeholder="Geben Sie Ihre Adresse ein"
                 />
               </div>
-             
+
               <label className=" text-textColor font-Montserrat text-lg">
                 Land{" "}
               </label>
@@ -658,7 +669,7 @@ const CustomerForm = () => {
           {/* Chọn thời gian, chỉ hiển thị nếu không chọn "other" */}
           {selectedRadio !== "other" && selectedBranch && (
             <div className="flex flex-col gap-2 w-full mt-4">
-             
+
               {/* <label
                 htmlFor="pickupTime"
                 className="text-textColor font-Montserrat text-sm italic desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
@@ -697,9 +708,8 @@ const CustomerForm = () => {
               value={formData.user.discount}
               onChange={handleChange}
               // required
-              className={`w-[185px] placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid ${
-                discount ? "border-red-500" : "border-textColor"
-              } rounded-lg focus:border-textColor focus:border-4
+              className={`w-[185px] placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid ${discount ? "border-red-500" : "border-textColor"
+                } rounded-lg focus:border-textColor focus:border-4
                             desktop:placeholder:text-xl desktop:text-xl
                             desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl
                         `}
