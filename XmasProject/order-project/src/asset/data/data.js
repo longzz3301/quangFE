@@ -29,7 +29,7 @@ export const pickUpDate = [
     { date: new Date(2024, 11, 8) },
     { date: new Date(2024, 11, 15) },
     { date: new Date(2024, 11, 22) },
-    { date: new Date(2024, 11, 25) },
+    // { date: new Date(2024, 11, 25) },
   ];
   
 
@@ -267,19 +267,6 @@ export const pickUpTimeLieferung =[
 {
         time: "21:30"
     }
-    ,
-{
-        time: "22:00"
-    }
-    ,
-{
-        time: "22:30"
-    }
-    ,
-{
-        time: "23:00"
-    }
-    ,
 ]
 
 export const pickUpQuantity = [
