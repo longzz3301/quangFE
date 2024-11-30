@@ -531,7 +531,6 @@ const CustomerForm = () => {
                 name="vornameLieferung"
                 value={formData.user.vornameLieferung}
                 onChange={handleChange}
-                handleChange
                 required
                 className="placeholder:italic placeholder:text-sm placeholder:text-textColor bg-backGround text-textColor border-2 border-solid border-textColor rounded-md focus:border-textColor focus:border-4 desktop:placeholder:text-xl desktop:text-xl desktopLarge:placeholder:text-3xl desktopLarge:py-4 desktopLarge:text-3xl"
               // placeholder="Geben Sie Ihre Adresse ein"
