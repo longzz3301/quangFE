@@ -138,7 +138,7 @@ const CustomerForm = () => {
     setLoading(true);
     // console.log('data :' ,data)
     console.log("data :", formData);
-
+    // test
 
     try {
       const { data } = await axios.post(
