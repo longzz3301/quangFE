@@ -1,3 +1,5 @@
+import React from 'react';
+
 import ChristmasBall from "../../asset/christmas-glob.png"
 import Cloud1 from "../../asset/cloud1.png"
 import Cloud2 from "../../asset/cloud2.png"

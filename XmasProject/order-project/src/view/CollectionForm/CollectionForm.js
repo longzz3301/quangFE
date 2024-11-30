@@ -103,9 +103,9 @@ const CustomerForm = () => {
   //     setSelectedAddress("");
   //   }
   // };
-  const handleAddressChange = (e) => {
-    setSelectedAddress(e.target.value); // Cập nhật địa chỉ đã chọn
-  };
+  // const handleAddressChange = (e) => {
+  //   setSelectedAddress(e.target.value); // Cập nhật địa chỉ đã chọn
+  // };
   // const selectedBranch = branches.find(branch => branch.name === selectedRadio);
 
   const handleChange = (e) => {
@@ -738,7 +738,7 @@ const CustomerForm = () => {
               {discount && (
                 <div className="text-yellow-400 font-bold">
                   Ihr Vorteil bei dieser Bestellung{" "}
-                  {selectedPickupQuantity * 20},-€
+                
                 </div>
               )}
             </>

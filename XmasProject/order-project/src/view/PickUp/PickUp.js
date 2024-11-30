@@ -1,5 +1,6 @@
 import PickUpDateItem from "./PickUpDateItem";
 import PickUpPlaceItem from "./PickUpPlaceItem";
+import React from 'react';
 
 const PickUp = () => {
 

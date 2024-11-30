@@ -1,3 +1,5 @@
+import React from 'react';
+
 import WarningIcon from "../../asset/warning.png";
 import SnowIcon from "../../asset/snowIcon.png";
 import SnowMan from "../../asset/snowMan.png";

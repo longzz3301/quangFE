@@ -6,6 +6,8 @@ import Product3 from "../../asset/Shushi2.jpg";
 import Product4 from "../../asset/Shushi3.jpg";
 import Product5 from "../../asset/Shushi4.jpg";
 import Santa from "../../asset/santa.png";
+import React from 'react';
+
 const Product = (props) => {
     // const { quantity, setQuantity, orderName, setOrderName } = props;
     const scrollToSection = () => {
